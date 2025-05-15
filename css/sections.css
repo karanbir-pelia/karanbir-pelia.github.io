@@ -280,7 +280,7 @@ body.light-theme .about-image::before {
     border-color: rgba(139, 92, 246, 0.3);
 }
 
-/* Enhanced hover effect for timeline date */
+/* Timeline date styles */
 .timeline-date {
     position: absolute;
     width: 60px;
@@ -290,25 +290,49 @@ body.light-theme .about-image::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.875rem;
     color: var(--light);
     top: 20px;
     z-index: 1;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    /* Animation will be controlled by JS */
+    animation-play-state: paused;
+}
+
+/* Animation for dates on odd (left) items */
+.timeline-item:nth-child(odd) .timeline-date {
+    right: -30px;
+    animation: fadeInCircleRight 0.8s ease forwards;
+    animation-play-state: paused;
+}
+
+/* Animation for dates on even (right) items */
+.timeline-item:nth-child(even) .timeline-date {
+    left: -30px;
+    animation: fadeInCircleLeft 0.8s ease forwards;
+    animation-play-state: paused;
+}
+
+/* Add staggered delays for each timeline item - handled by JS now */
+.timeline-item:nth-child(1) .timeline-date {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) .timeline-date {
+    animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(3) .timeline-date {
+    animation-delay: 0.5s;
 }
 
 .timeline-item:hover .timeline-date {
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
-}
-
-.timeline-item:nth-child(odd) .timeline-date {
-    right: -30px;
-}
-
-.timeline-item:nth-child(even) .timeline-date {
-    left: -30px;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
 }
 
 .timeline-title {
