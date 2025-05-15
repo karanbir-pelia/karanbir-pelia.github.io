@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Karanbir Singh Pelia | Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            rel="stylesheet"
+        />
+        <!-- Modular CSS -->
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/sections.css" />
+        <link rel="stylesheet" href="css/theme-toggle.css" />
+        <link rel="stylesheet" href="css/animations.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="stylesheet" href="css/light-theme.css" />
+        <link rel="stylesheet" href="css/font-consistency.css" />
+        <link rel="stylesheet" href="css/form-validation.css" />
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav id="navbar">
+            <a href="#hero" class="logo">
+                <span class="logo-icon"><i class="fas fa-code"></i></span>
+                <span class="logo-text">Karanbir Singh Pelia</span>
+            </a>
+            <div class="nav-right">
+                <div class="theme-toggle-container">
+                    <div class="theme-toggle-pill">
+                        <button
+                            id="themeToggle"
+                            class="theme-toggle"
+                            aria-label="Toggle dark/light theme"
+                        >
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </button>
+                        <div class="theme-toggle-divider"></div>
+                        <label class="system-theme-toggle">
+                            <input
+                                type="checkbox"
+                                id="systemThemeToggle"
+                                checked
+                            />
+                            <span class="toggle-icon"
+                                ><i class="fas fa-laptop"></i
+                            ></span>
+                            <span class="toggle-label">Follow system</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="menu" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul>
+                <li>
+                    <a href="#about" class="nav-link creative-hover">About</a>
+                </li>
+                <li>
+                    <a href="#projects" class="nav-link creative-hover"
+                        >Projects</a
+                    >
+                </li>
+                <li>
+                    <a href="#experience" class="nav-link creative-hover"
+                        >Experience</a
+                    >
+                </li>
+                <li>
+                    <a href="#contact" class="nav-link creative-hover"
+                        >Contact</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="hero">
+                <div class="gradient-blob blob-1 gradient-shift"></div>
+                <div class="gradient-blob blob-2 gradient-shift"></div>
+
+                <h1 class="fade-in">
+                    Hi, I'm <span class="gradient-text">Karanbir Singh</span>
+                </h1>
+                <p class="fade-in-up" style="animation-delay: 0.2s">
+                    A Curious Tech Geek and a Lifelong Learner navigating
+                    through the World of Computing
+                </p>
+
+                <div class="btn-group fade-in-up" style="animation-delay: 0.4s">
+                    <a href="#projects" class="btn btn-primary pulse-glow">
+                        <i class="fas fa-code"></i> View My Work
+                    </a>
+                    <a
+                        href="files/Karanbir Singh Pelia Resume.pdf"
+                        class="btn btn-outline"
+                        download
+                    >
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+
+                <div class="socials fade-in" style="animation-delay: 0.6s">
+                    <a
+                        href="https://github.com/karanbir-pelia"
+                        target="_blank"
+                        aria-label="GitHub"
+                        class="icon-contrast"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <a
+                        href="https://linkedin.com/in/karanbir-singh-pelia"
+                        target="_blank"
+                        aria-label="LinkedIn"
+                        class="icon-contrast"
+                        ><i class="fab fa-linkedin"></i
+                    ></a>
+                    <a
+                        href="mailto:karanbirsingh.pelia@stonybrook.edu"
+                        aria-label="Email"
+                        class="icon-contrast"
+                        ><i class="fas fa-envelope"></i
+                    ></a>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">About Me</h2>
+                </div>
+
+                <div class="about-text fade-in-left">
+                    <p>
+                        I'm a Master's student in Computer Science at Stony
+                        Brook University, exploring how AI and large language
+                        models can enhance visual storytelling and make data
+                        more intuitive. As a Graduate Research Assistant, I
+                        focus on bridging the gap between raw information and
+                        human-centered insight.
+                    </p>
+                    <p>
+                        From detecting driver fatigue to generating slide decks
+                        from web content, my work blends computer vision,
+                        automation, and thoughtful design. I'm driven by
+                        curiosity and a passion for building intelligent systems
+                        that make technology more accessible and impactful.
+                    </p>
+
+                    <div class="skills">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag"
+                            >Natural Language Processing</span
+                        >
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="about-image fade-in-right">
+                    <img
+                        src="images/profile-circular.png"
+                        alt="Karanbir Singh Pelia"
+                        class="fade-in"
+                        style="animation-delay: 0.2s"
+                    />
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">
+                        Featured Projects
+                    </h2>
+                    <p class="section-subtitle">A Collection of my Work</p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div
+                        class="project-card fade-in-up"
+                        style="animation-delay: 0.1s"
+                    >
+                        <div class="project-image">
+                            <i class="fas fa-window-maximize"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                Webpage-to-Presentation Converter
+                            </h3>
+                            <p class="project-description">
+                                An automation script that scrapes any public
+                                webpage and generates a shareable presentation
+                                link, powered by reverse-engineered API
+                                endpoints.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Firecrawl API</span>
+                                <span class="project-tag">Web Scraping</span>
+                            </div>
+                            <div class="project-links">
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/karanbir-pelia/site-to-slides"
+                                    class="project-link"
+                                    aria-label="GitHub repository"
+                                >
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="project-link"
+                                    aria-label="Live demo"
+                                >
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div
+                        class="project-card fade-in-up"
+                        style="animation-delay: 0.2s"
+                    >
+                        <div class="project-image">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                Driver Fatigue & Ergonomics Monitor
+                            </h3>
+                            <p class="project-description">
+                                A real-time driver monitoring system using
+                                computer vision to detect fatigue and poor
+                                posture, providing safety alerts with 95%
+                                accuracy.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">MediaPipe</span>
+                                <span class="project-tag">TensorFlow</span>
+                                <span class="project-tag">OpenCV</span>
+                            </div>
+                            <div class="project-links">
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/karanbir-pelia/fatigue-sense"
+                                    class="project-link"
+                                    aria-label="GitHub repository"
+                                >
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a
+                                    href="#"
+                                    class="project-link"
+                                    aria-label="Live demo"
+                                >
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div
+                        class="project-card fade-in-up"
+                        style="animation-delay: 0.3s"
+                    >
+                        <div class="project-image">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                Plant Disease Recognizer
+                            </h3>
+                            <p class="project-description">
+                                A custom CNN architecture achieving 97.38%
+                                accuracy across 38 plant conditions, deployed
+                                with Streamlit for interactive visualization.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">TensorFlow</span>
+                                <span class="project-tag">Keras</span>
+                                <span class="project-tag">Streamlit</span>
+                            </div>
+                            <div class="project-links">
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/karanbir-pelia/agrodoc"
+                                    class="project-link"
+                                    aria-label="GitHub repository"
+                                >
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a
+                                    target="_blank"
+                                    href="https://agrodoc.streamlit.app/"
+                                    class="project-link"
+                                    aria-label="Live demo"
+                                >
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">Experience</h2>
+                    <p class="section-subtitle">My Professional Journey</p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-content fade-in-right">
+                            <h3 class="timeline-title">
+                                Graduate Research Assistant
+                            </h3>
+                            <p class="timeline-subtitle">
+                                Stony Brook University
+                            </p>
+                            <p class="timeline-description">
+                                Exploring visual storytelling with Prof. Klaus
+                                Mueller to enhance infographic communication
+                                through iterative feedback. Evaluating LLMs'
+                                alignment with human cognition in interpreting
+                                data visualizations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content fade-in-left">
+                            <h3 class="timeline-title">
+                                Data Analytics Trainee
+                            </h3>
+                            <p class="timeline-subtitle">Campus Credentials</p>
+                            <p class="timeline-description">
+                                Automated data workflows using Python, MySQL,
+                                and Pandas to streamline processing and reduce
+                                turnaround time. Developed insightful data
+                                visualizations that enhanced decision-making.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content fade-in-right">
+                            <h3 class="timeline-title">Database Head</h3>
+                            <p class="timeline-subtitle">Rotaract Club</p>
+                            <p class="timeline-description">
+                                Led data-driven social media campaigns that
+                                enhanced engagement and increased event
+                                attendance. Coordinated event logistics and
+                                improved operational efficiency through
+                                meticulous data analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="section-header">
+                    <h2 class="section-title gradient-text">Get In Touch</h2>
+                    <p class="section-subtitle">
+                        Have a project in mind or want to collaborate?
+                    </p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <a
+                            href="mailto:karanbirsingh.pelia@stonybrook.edu"
+                            class="contact-item fade-in-left"
+                            aria-label="Send email to Karanbir"
+                        >
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email</h3>
+                                <p class="email-address">
+                                    karanbirsingh.pelia@stonybrook.edu
+                                </p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="https://maps.app.goo.gl/tJff4dL7cCMbx8pF8"
+                            target="_blank"
+                            rel="noopener"
+                            class="contact-item fade-in-left"
+                            aria-label="View location on map"
+                        >
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Location</h3>
+                                <p>Stony Brook, New York</p>
+                            </div>
+                        </a>
+
+                        <a
+                            href="tel:+16317105508"
+                            class="contact-item fade-in-left"
+                            aria-label="Call Karanbir"
+                        >
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone</h3>
+                                <p>+1 (631) 710-5508</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-form fade-in-right">
+                        <form
+                            id="contactForm"
+                            action="https://formspree.io/f/mvgadwje"
+                            method="POST"
+                        >
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Your name"
+                                        required
+                                        minlength="2"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Subject</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="_subject"
+                                        placeholder="Subject (optional)"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="_replyto"
+                                        placeholder="Your email"
+                                        required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                        title="Please enter a valid email address"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirm-email"
+                                        >Confirm Email</label
+                                    >
+                                    <input
+                                        type="email"
+                                        id="confirm-email"
+                                        name="confirmEmail"
+                                        placeholder="Confirm your email"
+                                        required
+                                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                        title="Please confirm your email address"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Your message"
+                                    required
+                                    minlength="10"
+                                    rows="4"
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">
+                    <span class="logo-icon"><i class="fas fa-code"></i></span>
+                    <span class="logo-text">Karanbir Singh Pelia</span>
+                </a>
+
+                <ul class="footer-links">
+                    <li><a href="#about" class="footer-link">About</a></li>
+                    <li>
+                        <a href="#projects" class="footer-link">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#experience" class="footer-link">Experience</a>
+                    </li>
+                    <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+
+                <div class="footer-socials">
+                    <a
+                        href="https://github.com/karanbir-pelia"
+                        target="_blank"
+                        aria-label="GitHub"
+                    >
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                        href="https://linkedin.com/in/karanbir-singh-pelia"
+                        target="_blank"
+                        aria-label="LinkedIn"
+                    >
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a
+                        href="mailto:karanbirsingh.pelia@stonybrook.edu"
+                        aria-label="Email"
+                    >
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+
+                <p class="copyright">
+                    © 2025 Karanbir Singh Pelia. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Modular JavaScript -->
+        <script src="js/main.js"></script>
+        <script src="js/animations.js"></script>
+        <script src="js/theme-toggle.js"></script>
+        <script src="js/creative.js"></script>
+        <script src="js/form-handler.js"></script>
+    </body>
+</html>
