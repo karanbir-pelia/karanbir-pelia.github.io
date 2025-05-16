@@ -43,6 +43,16 @@
     .logo-text {
         font-size: 1.1rem;
     }
+
+    /* Improve section padding for better mobile experience */
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    /* Add better spacing between sections */
+    main section:not(:last-child) {
+        margin-bottom: 2rem;
+    }
 }
 
 /* Hide logo text if space is too narrow */
@@ -293,19 +303,60 @@
 @media (max-width: 480px) {
     body,
     body.light-theme {
-        font-size: 16px; /* Keep base font size consistent even on small screens */
+        font-size: 14px;
     }
 
     #hero h1 {
         font-size: 2.5rem;
-        font-weight: 700; /* Ensure consistent weight */
+        line-height: 1.2;
+    }
+
+    /* Make project cards more responsive on narrow screens */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-card {
+        min-height: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .project-content {
+        padding: 1.25rem;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .project-tags {
+        gap: 0.35rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .project-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    /* Adjust project links for better touch targets */
+    .project-links {
+        gap: 1.25rem;
+    }
+
+    .project-link {
+        font-size: 1.35rem;
     }
 
     .btn {
-        padding: 0.6rem 1.5rem;
-        justify-content: center; /* Ensure content is centered */
-        text-align: center; /* Center text */
-        width: 100%; /* Full width on mobile */
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
     }
 
     .btn-group {
@@ -450,9 +501,94 @@
         justify-content: center;
         gap: 1.5rem 2rem;
     }
+
+    /* Improve timeline mobile layout */
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        left: 60px;
+        width: calc(100% - 70px);
+        padding: 1.5rem;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
+        left: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+
+    .timeline-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 3rem;
+    }
+
+    /* Improve about section responsiveness */
+    .skills {
+        gap: 0.5rem;
+    }
+
+    .skill-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .about-text p {
+        margin-bottom: 1.25rem;
+    }
+
+    /* Further improve contact form for better mobile experience */
+    input,
+    textarea {
+        border-radius: 8px;
+    }
+
+    .contact-form button[type="submit"] {
+        border-radius: 8px;
+    }
+
+    .contact-item {
+        border-radius: 10px;
+    }
+
+    /* Fix for email overflow on narrow screens */
+    .email-address {
+        word-break: break-all;
+        max-width: 100%;
+        display: inline-block;
+    }
+
+    /* Further reduce section padding on small screens */
+    section {
+        padding: 3rem 1.25rem;
+    }
+
+    /* Add adequate spacing between sections */
+    main section:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust section headers for better mobile appearance */
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
 }
 
-/* Very small screens */
 @media (max-width: 360px) {
     #contact .section-title {
         font-size: 1.75rem;
@@ -487,6 +623,180 @@
 
     label {
         font-size: 0.8rem;
+    }
+
+    .projects-grid {
+        gap: 1.5rem;
+    }
+
+    .project-image {
+        padding-bottom: 50%; /* Adjust aspect ratio for smaller screens */
+    }
+
+    .project-image i {
+        font-size: 2.5rem;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    /* Create better spacing for project details */
+    .project-description {
+        margin-bottom: 1.2rem;
+    }
+
+    .project-tags {
+        margin-bottom: 1rem;
+    }
+
+    /* Further refine timeline for very narrow screens */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        padding: 1.25rem;
+    }
+
+    .timeline-description {
+        font-size: 0.85rem;
+    }
+
+    /* Improve hero section for very narrow screens */
+    #hero {
+        padding: 4rem 1.25rem 2rem;
+    }
+
+    #hero h1 {
+        font-size: 2.25rem;
+    }
+
+    #hero p {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    .btn-group {
+        gap: 1rem;
+    }
+
+    .about-image {
+        width: 180px;
+        padding-bottom: 180px;
+    }
+
+    .skill-tag {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    /* Improve form elements spacing */
+    .form-group {
+        margin-bottom: 0.875rem;
+    }
+
+    /* Ensure contact icons are properly sized */
+    .contact-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+    }
+
+    /* Better alignment for contact text */
+    .contact-text h3 {
+        font-size: 0.95rem;
+    }
+
+    /* Fine-tune section padding on very narrow screens */
+    section {
+        padding: 2.5rem 1rem;
+    }
+
+    /* Reduce section margin for compact layout */
+    main section:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Add ultra-narrow screen support */
+@media (max-width: 280px) {
+    body,
+    body.light-theme {
+        font-size: 13px;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .project-content {
+        padding: 0.75rem;
+    }
+
+    .project-title {
+        font-size: 0.95rem;
+    }
+
+    .project-description {
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .project-tags {
+        margin-bottom: 0.75rem;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        left: 50px;
+        width: calc(100% - 60px);
+        padding: 1rem;
+    }
+
+    .contact-item {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .contact-form {
+        padding: 1rem 0.75rem;
+    }
+
+    .form-group {
+        margin-bottom: 0.75rem;
+    }
+
+    label {
+        margin-bottom: 0.2rem;
+    }
+
+    input,
+    textarea {
+        padding: 0.6rem;
+    }
+
+    .about-image {
+        width: 150px;
+        padding-bottom: 150px;
+    }
+
+    .skill-tag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    /* Minimal padding for ultra-narrow screens */
+    section {
+        padding: 2rem 0.75rem;
     }
 }
 
@@ -640,5 +950,35 @@
         width: 32px;
         height: 32px;
         font-size: 0.9rem;
+    }
+}
+
+/* Extremely narrow mobile devices */
+@media (max-width: 320px) {
+    .project-content {
+        padding: 0.8rem;
+    }
+
+    .project-title {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .project-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-tags {
+        margin-bottom: 0.8rem;
+    }
+
+    .project-tag {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.65rem;
+    }
+
+    .project-links {
+        gap: 1rem;
     }
 }

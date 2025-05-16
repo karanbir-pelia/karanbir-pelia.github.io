@@ -468,5 +468,6 @@ body.light-theme .socials a:hover {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    padding: 0.5rem;
     font-weight: 400;
 }

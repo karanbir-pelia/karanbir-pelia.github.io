@@ -1,6 +1,6 @@
 // Fade-in animations on scroll
 const fadeElements = document.querySelectorAll(
-    ".fade-in, .fade-in-up, .fade-in-left, .fade-in-right, .timeline-date"
+    ".fade-in, .fade-in-up, .fade-in-left, .fade-in-right, .timeline-date, .slide-in-bottom, .gradient-text-reveal, .fade-subtitle"
 );
 
 const fadeInOptions = {
@@ -14,6 +14,19 @@ const fadeInObserver = new IntersectionObserver(function (entries, observer) {
             return;
         }
         entry.target.style.animationPlayState = "running";
+
+        // If this is a section header with border animation, also animate its border
+        if (
+            entry.target.classList.contains("gradient-text-reveal") &&
+            entry.target.classList.contains("border-reveal")
+        ) {
+            // Ensure the pseudo-element animation runs
+            document.documentElement.style.setProperty(
+                "--header-animate",
+                "running"
+            );
+        }
+
         observer.unobserve(entry.target);
     });
 }, fadeInOptions);
@@ -22,6 +35,29 @@ fadeElements.forEach((el) => {
     el.style.animationPlayState = "paused";
     fadeInObserver.observe(el);
 });
+
+// Function to animate section headers when they enter viewport
+function setupSectionHeaderAnimations() {
+    const sectionHeaders = document.querySelectorAll(
+        ".section-header.slide-in-bottom"
+    );
+
+    sectionHeaders.forEach((header) => {
+        // Reset all animations within this header
+        const animatedElements = header.querySelectorAll(
+            ".gradient-text-reveal, .fade-subtitle, .border-reveal"
+        );
+
+        animatedElements.forEach((el) => {
+            el.style.animationPlayState = "paused";
+            fadeInObserver.observe(el);
+        });
+
+        // Also observe the header itself
+        header.style.animationPlayState = "paused";
+        fadeInObserver.observe(header);
+    });
+}
 
 // Function to handle experience section animations
 function resetExperienceAnimations() {
@@ -62,6 +98,23 @@ function resetExperienceAnimations() {
         content.style.animationPlayState = "paused";
         fadeInObserver.observe(content);
     });
+
+    // Also reset section header animations
+    const experienceHeader = document.querySelector(
+        "#experience .section-header"
+    );
+    if (experienceHeader) {
+        experienceHeader.style.animationPlayState = "paused";
+        fadeInObserver.observe(experienceHeader);
+
+        const animatedElements = experienceHeader.querySelectorAll(
+            ".gradient-text-reveal, .fade-subtitle, .border-reveal"
+        );
+        animatedElements.forEach((el) => {
+            el.style.animationPlayState = "paused";
+            fadeInObserver.observe(el);
+        });
+    }
 }
 
 // Reset animations when using navigation links
@@ -76,6 +129,9 @@ document.querySelectorAll('a[href^="#"]').forEach((navLink) => {
 
 // Check if page loaded directly on experience section
 document.addEventListener("DOMContentLoaded", function () {
+    // Set up all section header animations
+    setupSectionHeaderAnimations();
+
     // Check if hash exists and points to experience section
     if (window.location.hash === "#experience") {
         // Delay slightly to ensure elements are ready
