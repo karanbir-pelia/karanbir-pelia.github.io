@@ -182,26 +182,60 @@
 @media (max-width: 768px) {
     nav ul {
         position: fixed;
-        top: 0;
-        right: -100%;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
         background: var(--dark-lighter);
-        width: 80%;
-        max-width: 300px;
-        height: 100vh;
-        padding: 4rem 2rem;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem 2rem;
         flex-direction: column;
-        align-items: flex-start;
-        transition: var(--transition);
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-        z-index: 101;
+        align-items: stretch;
+        gap: 0.5rem;
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.3s ease,
+                    visibility 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 
     body.light-theme nav ul {
         background: var(--light-bg-lighter);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     nav ul.active {
-        right: 0;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    nav ul li {
+        width: 100%;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    nav ul.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 0.875rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
     }
 
     button.menu {
@@ -534,6 +568,17 @@
         margin-bottom: 3rem;
     }
 
+    /* Responsive company logos */
+    .company-logo {
+        width: 48px;
+        height: 48px;
+        padding: 0.4rem;
+    }
+
+    .timeline-header {
+        gap: 0.75rem;
+    }
+
     /* Improve about section responsiveness */
     .skills {
         gap: 0.5rem;
@@ -662,6 +707,17 @@
 
     .timeline-description {
         font-size: 0.85rem;
+    }
+
+    /* Smaller logos on very small screens */
+    .company-logo {
+        width: 40px;
+        height: 40px;
+        padding: 0.3rem;
+    }
+
+    .timeline-header {
+        gap: 0.5rem;
     }
 
     /* Improve hero section for very narrow screens */

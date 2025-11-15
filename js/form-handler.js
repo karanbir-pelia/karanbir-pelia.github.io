@@ -264,6 +264,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 throw new Error("Network response was not ok");
             })
             .then((data) => {
+                // Show success toast notification
+                if (window.toast) {
+                    window.toast.success({
+                        title: "Message Sent!",
+                        message: "Thank you! Your message has been sent successfully."
+                    }, 5000);
+                }
+
                 // Append the status div to the form
                 if (!contactForm.contains(formStatusDiv)) {
                     contactForm.appendChild(formStatusDiv);
@@ -282,6 +290,14 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch((error) => {
                 console.error("Error:", error);
+
+                // Show error toast notification
+                if (window.toast) {
+                    window.toast.error({
+                        title: "Error",
+                        message: "There was a problem sending your message. Please try again."
+                    }, 5000);
+                }
 
                 // Reset button state
                 submitButton.disabled = false;
@@ -302,6 +318,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check if redirected back from Formspree
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has("submitted")) {
+            // Show success toast notification
+            if (window.toast) {
+                window.toast.success({
+                    title: "Message Sent!",
+                    message: "Thank you! Your message has been sent successfully."
+                }, 5000);
+            }
+
             // Append the status div to the form now that we have a message to display
             if (!contactForm.contains(formStatusDiv)) {
                 contactForm.appendChild(formStatusDiv);

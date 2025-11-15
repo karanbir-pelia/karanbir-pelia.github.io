@@ -149,7 +149,7 @@ body:not(.light-theme) .is-invalid {
 input:focus,
 textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25) !important;
 }
 
 /* Disable styling for button */
@@ -191,7 +191,7 @@ button:disabled {
 .btn-primary:hover:not(:disabled) {
     opacity: 0.9;
     transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
 }
 
 /* Responsive adjustments for form validation */

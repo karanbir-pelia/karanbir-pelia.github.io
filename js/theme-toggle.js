@@ -47,11 +47,19 @@ function setTheme(theme) {
 
 // Toggle theme when button is clicked
 themeToggle.addEventListener("click", () => {
-    if (document.body.classList.contains("light-theme")) {
-        setTheme("dark");
-    } else {
-        setTheme("light");
+    // Automatically disable "Follow system" when user manually toggles theme
+    const systemThemeEnabled = localStorage.getItem("systemTheme") !== "disabled";
+
+    if (systemThemeEnabled) {
+        // Disable system theme following
+        localStorage.setItem("systemTheme", "disabled");
+        systemThemeToggle.checked = false;
     }
+
+    // Toggle the theme
+    const newTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
+    applyTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
 });
 
 // Function to handle system theme changes
@@ -77,14 +85,9 @@ function initializeTheme() {
     // Set the system theme toggle state
     systemThemeToggle.checked = systemThemeEnabled;
 
-    // Show/hide the manual theme toggle based on system theme setting
-    if (systemThemeEnabled) {
-        themeToggle.classList.add("hidden");
-        themeToggle.classList.remove("active");
-    } else {
-        themeToggle.classList.remove("hidden");
-        themeToggle.classList.add("active");
-    }
+    // Always keep the theme toggle visible and clickable
+    themeToggle.classList.remove("hidden");
+    themeToggle.classList.add("active");
 
     if (systemThemeEnabled) {
         // Use system preference
@@ -108,16 +111,13 @@ systemThemeToggle.addEventListener("change", function () {
     if (this.checked) {
         // Enable system theme
         localStorage.setItem("systemTheme", "enabled");
-        themeToggle.classList.add("hidden");
-        themeToggle.classList.remove("active");
+        localStorage.removeItem("theme");
 
         // Use system preference immediately
         setTheme(prefersDarkScheme.matches ? "dark" : "light");
     } else {
         // Disable system theme
         localStorage.setItem("systemTheme", "disabled");
-        themeToggle.classList.remove("hidden");
-        themeToggle.classList.add("active");
 
         // Keep current theme as starting point
         const currentTheme = document.body.classList.contains("light-theme")

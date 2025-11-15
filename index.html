@@ -3,7 +3,72 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Karanbir Singh Pelia | Portfolio</title>
+
+        <!-- Primary Meta Tags -->
+        <title>Karanbir Singh Pelia | Software Engineer & ML Specialist</title>
+        <meta
+            name="title"
+            content="Karanbir Singh Pelia | Software Engineer & ML Specialist"
+        />
+        <meta
+            name="description"
+            content="Software Engineer at Stony Brook University specializing in AI, Machine Learning, Computer Vision, and HCI. Building intelligent systems that transform visual storytelling and data visualization."
+        />
+        <meta
+            name="keywords"
+            content="Karanbir Singh Pelia, Software Engineer, Machine Learning, Computer Vision, AI, Data Science, Python, TensorFlow, NLP, Stony Brook University"
+        />
+        <meta name="author" content="Karanbir Singh Pelia" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://karanbir-pelia.github.io/" />
+        <meta
+            property="og:title"
+            content="Karanbir Singh Pelia | Software Engineer & ML Specialist"
+        />
+        <meta
+            property="og:description"
+            content="Software Engineer at Stony Brook University specializing in AI, Machine Learning, Computer Vision, and HCI. Building intelligent systems that transform visual storytelling and data visualization."
+        />
+        <meta
+            property="og:image"
+            content="https://karanbir-pelia.github.io/images/profile-circular.jpg"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="https://karanbir-pelia.github.io/"
+        />
+        <meta
+            property="twitter:title"
+            content="Karanbir Singh Pelia | Software Engineer & ML Specialist"
+        />
+        <meta
+            property="twitter:description"
+            content="Software Engineer at Stony Brook University specializing in AI, Machine Learning, Computer Vision, and HCI."
+        />
+        <meta
+            property="twitter:image"
+            content="https://karanbir-pelia.github.io/images/profile-circular.jpg"
+        />
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>"
+        />
+
+        <!-- Preconnect for performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+        <!-- Fonts -->
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
@@ -16,6 +81,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             rel="stylesheet"
         />
+
         <!-- Modular CSS -->
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="css/sections.css" />
@@ -25,6 +91,39 @@
         <link rel="stylesheet" href="css/light-theme.css" />
         <link rel="stylesheet" href="css/font-consistency.css" />
         <link rel="stylesheet" href="css/form-validation.css" />
+        <link rel="stylesheet" href="css/modern-ui.css" />
+        <link rel="stylesheet" href="css/hamburger-menu.css" />
+        <link rel="stylesheet" href="css/creative-overhaul.css" />
+
+        <!-- Structured Data -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Karanbir Singh Pelia",
+                "url": "https://karanbir-pelia.github.io/",
+                "image": "https://karanbir-pelia.github.io/images/profile-circular.jpg",
+                "jobTitle": "Software Engineer",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Stony Brook University"
+                },
+                "alumniOf": "Stony Brook University",
+                "knowsAbout": [
+                    "Machine Learning",
+                    "Computer Vision",
+                    "Data Science",
+                    "Python",
+                    "TensorFlow",
+                    "Natural Language Processing"
+                ],
+                "email": "karanbirsingh.pelia@stonybrook.edu",
+                "sameAs": [
+                    "https://github.com/karanbir-pelia",
+                    "https://linkedin.com/in/karanbir-singh-pelia"
+                ]
+            }
+        </script>
     </head>
     <body>
         <!-- Navigation -->
@@ -58,8 +157,14 @@
                         </label>
                     </div>
                 </div>
-                <button class="menu" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
+                <button
+                    class="hamburger"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                >
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
                 </button>
             </div>
             <ul>
@@ -176,16 +281,19 @@
                             >Natural Language Processing</span
                         >
                         <span class="skill-tag">Data Visualization</span>
-                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">FastAPI</span>
                     </div>
                 </div>
 
                 <div class="about-image fade-in-right">
                     <img
-                        src="images/profile-circular.png"
-                        alt="Karanbir Singh Pelia"
+                        src="images/profile-circular.jpg"
+                        alt="Karanbir Singh Pelia - Software Engineer"
                         class="fade-in"
                         style="animation-delay: 0.2s"
+                        loading="lazy"
+                        width="800"
+                        height="800"
                     />
                 </div>
             </section>
@@ -353,10 +461,20 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2025</div>
                         <div class="timeline-content fade-in-right">
-                            <h3 class="timeline-title">
-                                Software Developer Intern
-                            </h3>
-                            <p class="timeline-subtitle">Infrrd Inc.</p>
+                            <div class="timeline-header">
+                                <img
+                                    src="images/logos/Infrrd.jpeg"
+                                    alt="Infrrd Inc. Logo"
+                                    class="company-logo"
+                                    loading="lazy"
+                                />
+                                <div class="timeline-text">
+                                    <h3 class="timeline-title">
+                                        Software Developer Intern
+                                    </h3>
+                                    <p class="timeline-subtitle">Infrrd Inc.</p>
+                                </div>
+                            </div>
                             <p class="timeline-location">
                                 <i
                                     class="fas fa-map-marker-alt"
@@ -380,12 +498,22 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2025</div>
                         <div class="timeline-content fade-in-left">
-                            <h3 class="timeline-title">
-                                Graduate Research Assistant
-                            </h3>
-                            <p class="timeline-subtitle">
-                                Stony Brook University
-                            </p>
+                            <div class="timeline-header">
+                                <img
+                                    src="images/logos/Stony_Brook_University.png"
+                                    alt="Stony Brook University Logo"
+                                    class="company-logo"
+                                    loading="lazy"
+                                />
+                                <div class="timeline-text">
+                                    <h3 class="timeline-title">
+                                        Graduate Research Assistant
+                                    </h3>
+                                    <p class="timeline-subtitle">
+                                        Stony Brook University
+                                    </p>
+                                </div>
+                            </div>
                             <p class="timeline-location">
                                 <i
                                     class="fas fa-map-marker-alt"
@@ -407,10 +535,22 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2023</div>
                         <div class="timeline-content fade-in-right">
-                            <h3 class="timeline-title">
-                                Data Analytics Trainee
-                            </h3>
-                            <p class="timeline-subtitle">Campus Credentials</p>
+                            <div class="timeline-header">
+                                <img
+                                    src="images/logos/Campus_Credentials.jpeg"
+                                    alt="Campus Credentials Logo"
+                                    class="company-logo"
+                                    loading="lazy"
+                                />
+                                <div class="timeline-text">
+                                    <h3 class="timeline-title">
+                                        Data Analytics Trainee
+                                    </h3>
+                                    <p class="timeline-subtitle">
+                                        Campus Credentials
+                                    </p>
+                                </div>
+                            </div>
                             <p class="timeline-location">
                                 <i
                                     class="fas fa-map-marker-alt"
@@ -431,8 +571,22 @@
                     <div class="timeline-item">
                         <div class="timeline-date">2022</div>
                         <div class="timeline-content fade-in-right">
-                            <h3 class="timeline-title">Database Head</h3>
-                            <p class="timeline-subtitle">Rotaract Club</p>
+                            <div class="timeline-header">
+                                <img
+                                    src="images/logos/Rotaract_Club_DPUS.jpeg"
+                                    alt="Rotaract Club Logo"
+                                    class="company-logo"
+                                    loading="lazy"
+                                />
+                                <div class="timeline-text">
+                                    <h3 class="timeline-title">
+                                        Database Head
+                                    </h3>
+                                    <p class="timeline-subtitle">
+                                        Rotaract Club
+                                    </p>
+                                </div>
+                            </div>
                             <p class="timeline-location">
                                 <i
                                     class="fas fa-map-marker-alt"
@@ -520,6 +674,15 @@
                             action="https://formspree.io/f/mvgadwje"
                             method="POST"
                         >
+                            <!-- Honeypot field for spam protection (hidden from users) -->
+                            <input
+                                type="text"
+                                name="_gotcha"
+                                style="display: none"
+                                tabindex="-1"
+                                autocomplete="off"
+                            />
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name</label>
@@ -643,11 +806,66 @@
             </div>
         </footer>
 
+        <!-- Floating Action Button -->
+        <div class="fab-container">
+            <button class="fab-main" id="fabMain" aria-label="Quick Actions">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div class="fab-menu" id="fabMenu">
+                <a
+                    href="files/Karanbir Singh Pelia Resume.pdf"
+                    download
+                    class="fab-option"
+                    aria-label="Download Resume"
+                    data-tooltip="Resume"
+                >
+                    <i class="fas fa-file-download"></i>
+                </a>
+                <a
+                    href="https://github.com/karanbir-pelia"
+                    target="_blank"
+                    class="fab-option"
+                    aria-label="GitHub"
+                    data-tooltip="GitHub"
+                >
+                    <i class="fab fa-github"></i>
+                </a>
+                <a
+                    href="https://linkedin.com/in/karanbir-singh-pelia"
+                    target="_blank"
+                    class="fab-option"
+                    aria-label="LinkedIn"
+                    data-tooltip="LinkedIn"
+                >
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                    href="#contact"
+                    class="fab-option"
+                    aria-label="Contact Me"
+                    data-tooltip="Contact"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <button id="backToTop" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Toast Container -->
+        <div id="toastContainer" class="toast-container"></div>
+
         <!-- Modular JavaScript -->
         <script src="js/main.js"></script>
         <script src="js/animations.js"></script>
         <script src="js/theme-toggle.js"></script>
         <script src="js/creative.js"></script>
         <script src="js/form-handler.js"></script>
+        <script src="js/fab.js"></script>
+        <script src="js/toast.js"></script>
+        <script src="js/mobile-nav.js"></script>
     </body>
 </html>
