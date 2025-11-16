@@ -180,18 +180,31 @@ body.light-theme .timeline-content:hover {
     box-shadow: 0 8px 20px rgba(99, 102, 241, 0.1);
 }
 
-/* Gradient contact icons */
+/* Subtle contact icons in dark mode */
 .contact-icon {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: var(--card-bg);
+    border: 1px solid rgba(99, 102, 241, 0.2);
     transition: all 0.3s ease;
 }
 
 .contact-item:hover .contact-icon {
     transform: scale(1.05) rotate(5deg);
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-color: transparent;
+}
+
+body.light-theme .contact-icon {
+    background: var(--light-bg-lighter);
+    border-color: rgba(99, 102, 241, 0.15);
 }
 
 body.light-theme .contact-item:hover {
     box-shadow: 0 8px 20px rgba(99, 102, 241, 0.08);
+}
+
+body.light-theme .contact-item:hover .contact-icon {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: white;
 }
 
 /* ========================================
