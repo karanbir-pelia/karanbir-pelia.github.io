@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
-            document.body.classList.toggle('menu-open');
+            document.body.classList.remove('menu-open');
         });
     });
 
@@ -48,13 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     style.textContent = `
         body.menu-open {
             overflow: hidden;
-        }
-
-        @media (max-width: 768px) {
-            body.menu-open {
-                position: fixed;
-                width: 100%;
-            }
         }
     `;
     document.head.appendChild(style);
