@@ -51,6 +51,8 @@
     }
 
     .hamburger { display: flex; }
+    .nav-resume-btn { display: none; }
+    .nav-mobile-resume { display: block; border-top: 1px solid rgba(255,255,255,0.07); margin-top: 0.75rem; padding-top: 0.75rem; }
     .mobile-menu-overlay { display: block; pointer-events: none; }
     .mobile-menu-overlay.active { pointer-events: all; }
 
@@ -155,7 +157,7 @@
 
     .contact-form-panel { padding: 1.5rem; }
 
-    .stat-number { font-size: 2rem; }
+    /* (stat-number removed) */
 }
 
 /* ---- Very small (≤ 380px) ---- */

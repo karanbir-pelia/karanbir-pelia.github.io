@@ -420,6 +420,7 @@ nav#navbar.scrolled {
 .nav-links .nav-link.active { color: var(--violet-bright); }
 
 .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+.nav-mobile-resume { display: none; }
 
 .nav-resume-btn {
     display: flex;
