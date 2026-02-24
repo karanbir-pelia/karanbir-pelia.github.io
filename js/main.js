@@ -1,109 +1,120 @@
-// Mobile menu toggle
-document.querySelector("button.menu").addEventListener("click", function () {
-    document.querySelector("nav ul").classList.toggle("active");
+/**
+ * Portfolio — main.js
+ * Navbar · mobile menu · smooth scroll · scroll animations (additive only)
+ */
+
+// ===========================
+// DOM References
+// ===========================
+const navbar   = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+const overlay   = document.getElementById('mobileOverlay');
+const backToTop = document.getElementById('backToTop');
+const navLinkEls = document.querySelectorAll('.nav-link');
+const sections   = document.querySelectorAll('section[id]');
+
+// ===========================
+// Navbar scroll effect
+// ===========================
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// ===========================
+// Mobile menu
+// ===========================
+function closeMobileMenu() {
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    navLinks.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    navLinks.classList.toggle('open', isOpen);
+    overlay.classList.toggle('active', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-// Close menu when clicking a link
-document.querySelectorAll("nav ul li a").forEach((link) => {
-    link.addEventListener("click", function () {
-        document.querySelector("nav ul").classList.remove("active");
+overlay.addEventListener('click', closeMobileMenu);
+
+navLinkEls.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// ===========================
+// Smooth scroll with offset
+// ===========================
+const NAV_OFFSET = 80;
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const id     = this.getAttribute('href').slice(1);
+        const target = id ? document.getElementById(id) : null;
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+        window.scrollTo({ top, behavior: 'smooth' });
+        history.pushState(null, null, `#${id}`);
     });
 });
 
-// Navbar scroll effect
-window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("navbar");
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
-
-// Active nav link
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-// Function to check if logo text needs to be hidden
-function checkLogoTextDisplay() {
-    const logoContainers = document.querySelectorAll("a.logo, .footer-logo");
-
-    logoContainers.forEach((container) => {
-        const logoText = container.querySelector(".logo-text");
-        if (!logoText) return;
-
-        // Reset display to measure properly
-        logoText.style.display = "";
-
-        // Check if container width is less than the sum of icon and text
-        const logoIcon = container.querySelector(".logo-icon");
-        const containerWidth = container.offsetWidth;
-        const iconWidth = logoIcon ? logoIcon.offsetWidth : 0;
-        const textWidth = logoText.offsetWidth;
-
-        // For footer logo, check parent container width too
-        const isFooterLogo = container.classList.contains("footer-logo");
-        const footerWidth = isFooterLogo
-            ? container.closest(".footer-content").offsetWidth
-            : Infinity;
-
-        // If text would wrap or overflow, hide it
-        if (
-            containerWidth < iconWidth + textWidth + 10 ||
-            (isFooterLogo && footerWidth < textWidth + 20)
-        ) {
-            // 10-20px buffer
-            logoText.style.display = "none";
-            container.style.justifyContent = "center";
-        } else {
-            container.style.justifyContent = "";
+// ===========================
+// Active nav link on scroll
+// ===========================
+function updateActiveLink() {
+    let current = '';
+    sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - NAV_OFFSET - 10) {
+            current = sec.id;
         }
+    });
+    navLinkEls.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 }
 
-// Check logo text on load and resize
-window.addEventListener("load", checkLogoTextDisplay);
-window.addEventListener("resize", checkLogoTextDisplay);
+window.addEventListener('scroll', updateActiveLink, { passive: true });
+updateActiveLink();
 
-window.addEventListener("scroll", function () {
-    let current = "";
+// ===========================
+// Back to Top
+// ===========================
+window.addEventListener('scroll', () => {
+    backToTop?.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
 
-    sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").substring(1) === current) {
-            link.classList.add("active");
-        }
-    });
+backToTop?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Smooth scroll for all internal links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
+// ===========================
+// Scroll-triggered animations
+// IMPORTANT: content is always visible.
+// Adding .animate class starts a CSS @keyframes animation.
+// Never sets opacity:0 or otherwise hides content.
+// ===========================
+const animTargets = document.querySelectorAll(
+    '.highlight-card, .edu-card, .exp-item, .project-card, .contact-card, .contact-form-panel, .section-header'
+);
 
-        const targetId = this.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-            const offset = 30; // Reduced offset from 70px to 30px for tighter positioning
-            const scrollPosition = targetElement.offsetTop - offset;
-
-            window.scrollTo({
-                top: scrollPosition,
-                behavior: "smooth",
-            });
-
-            // Update URL without refreshing the page
-            history.pushState(null, null, `#${targetId}`);
+const animObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            animObserver.unobserve(entry.target);
         }
     });
+}, {
+    threshold: 0.05,
+    rootMargin: '0px 0px -40px 0px'
+});
+
+animTargets.forEach((el, i) => {
+    el.style.animationDelay = `${(i % 5) * 60}ms`;
+    animObserver.observe(el);
 });
