@@ -93,28 +93,38 @@ backToTop?.addEventListener('click', () => {
 });
 
 // ===========================
-// Scroll-triggered animations
-// IMPORTANT: content is always visible.
-// Adding .animate class starts a CSS @keyframes animation.
-// Never sets opacity:0 or otherwise hides content.
+// Project card — click anywhere to follow primary link
 // ===========================
-const animTargets = document.querySelectorAll(
-    '.highlight-card, .edu-card, .exp-item, .project-card, .contact-card, .contact-form-panel, .section-header'
-);
-
-const animObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            animObserver.unobserve(entry.target);
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function (e) {
+        // Don't override direct link/button clicks
+        if (e.target.closest('a, button')) return;
+        const primaryLink = card.querySelector('.project-link-icon[href]');
+        if (primaryLink) {
+            window.open(primaryLink.href, '_blank', 'noopener,noreferrer');
         }
     });
-}, {
-    threshold: 0.05,
-    rootMargin: '0px 0px -40px 0px'
 });
 
-animTargets.forEach((el, i) => {
-    el.style.animationDelay = `${(i % 5) * 60}ms`;
-    animObserver.observe(el);
+// ===========================
+// Contact textarea — auto-resize as user types
+// ===========================
+const msgTextarea = document.querySelector('#contactForm textarea[name="message"]');
+if (msgTextarea) {
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 320) + 'px';
+    }
+    msgTextarea.addEventListener('input', autoResize);
+}
+
+// ===========================
+// Contact form — track filled state for CSS
+// ===========================
+document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(field => {
+    function toggleFilled() {
+        field.classList.toggle('has-value', field.value.trim().length > 0);
+    }
+    field.addEventListener('input', toggleFilled);
+    toggleFilled(); // initial state
 });

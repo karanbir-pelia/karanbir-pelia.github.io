@@ -305,6 +305,14 @@ section {
     padding: 0.4rem 1.1rem;
     border-radius: var(--radius-full);
     margin-bottom: 1.25rem;
+    transition: var(--transition);
+}
+
+.section-tag:hover {
+    background: rgba(124,58,237,0.18);
+    border-color: rgba(167,139,250,0.45);
+    box-shadow: 0 0 18px rgba(124,58,237,0.2);
+    color: var(--violet-bright);
 }
 
 .section-title {
@@ -411,13 +419,15 @@ nav#navbar.scrolled {
     position: relative;
 }
 
-.nav-links .nav-link:hover,
-.nav-links .nav-link.active {
+.nav-links .nav-link:hover {
     color: var(--text);
     background: rgba(167,139,250,0.08);
 }
 
-.nav-links .nav-link.active { color: var(--violet-bright); }
+.nav-links .nav-link.active {
+    color: var(--violet-bright);
+    background: rgba(124,58,237,0.1);
+}
 
 .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
 .nav-mobile-resume { display: none; }
@@ -513,7 +523,7 @@ nav#navbar.scrolled {
     padding: 0.45rem 1.1rem;
     border-radius: var(--radius-full);
     margin-bottom: 1.75rem;
-    animation: fadeInUp 0.6s ease both;
+    animation: fadeInUp 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 24px rgba(5,150,105,0.1);
 }
@@ -539,7 +549,7 @@ nav#navbar.scrolled {
     line-height: 1.05;
     margin-bottom: 1.5rem;
     letter-spacing: -0.03em;
-    animation: fadeInUp 0.6s ease 0.1s both;
+    animation: fadeInUp 0.7s cubic-bezier(0.33, 1, 0.68, 1) 0.08s forwards;
 }
 
 .hero-subtitle {
@@ -548,7 +558,7 @@ nav#navbar.scrolled {
     max-width: 540px;
     margin-bottom: 2.5rem;
     line-height: 1.8;
-    animation: fadeInUp 0.6s ease 0.2s both;
+    animation: fadeInUp 0.7s cubic-bezier(0.33, 1, 0.68, 1) 0.16s forwards;
 }
 
 .hero-cta {
@@ -556,35 +566,35 @@ nav#navbar.scrolled {
     gap: 1rem;
     flex-wrap: wrap;
     margin-bottom: 3rem;
-    animation: fadeInUp 0.6s ease 0.3s both;
+    animation: fadeInUp 0.7s cubic-bezier(0.33, 1, 0.68, 1) 0.24s forwards;
 }
 
 .hero-socials {
     display: flex;
     gap: 0.75rem;
-    animation: fadeInUp 0.6s ease 0.4s both;
+    animation: fadeInUp 0.7s cubic-bezier(0.33, 1, 0.68, 1) 0.32s forwards;
 }
 
 .social-link {
     width: 44px; height: 44px;
     border-radius: 50%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: #b8c4d4;
     font-size: 1.1rem;
     transition: var(--transition);
     backdrop-filter: blur(10px);
 }
 
 .social-link:hover {
-    background: rgba(124,58,237,0.15);
-    border-color: rgba(167,139,250,0.4);
-    color: var(--violet);
+    background: rgba(124,58,237,0.18);
+    border-color: rgba(167,139,250,0.45);
+    color: var(--violet-bright);
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(124,58,237,0.25);
+    box-shadow: 0 8px 24px rgba(124,58,237,0.3);
 }
 
 /* Hero image */
@@ -593,7 +603,7 @@ nav#navbar.scrolled {
     width: 380px; height: 380px;
     flex-shrink: 0;
     z-index: 1;
-    animation: fadeIn 0.8s ease 0.25s both;
+    animation: fadeIn 0.8s ease 0.15s forwards;
 }
 
 /* Spinning conic rings — using border trick */
@@ -817,22 +827,22 @@ footer::before {
 .footer-socials a {
     width: 40px; height: 40px;
     border-radius: 50%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
+    color: #c4cfe0;
     font-size: 1rem;
     transition: var(--transition);
 }
 
 .footer-socials a:hover {
-    background: rgba(124,58,237,0.12);
-    border-color: rgba(167,139,250,0.3);
-    color: var(--violet);
+    background: rgba(124,58,237,0.18);
+    border-color: rgba(167,139,250,0.45);
+    color: var(--violet-bright);
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(124,58,237,0.2);
+    box-shadow: 0 6px 18px rgba(124,58,237,0.25);
 }
 
 .copyright { font-size: 0.8rem; color: var(--text-muted); }
@@ -942,8 +952,8 @@ footer::before {
 }
 
 @keyframes fadeInUp {
-    from { opacity:0; transform:translateY(28px); }
-    to   { opacity:1; transform:translateY(0); }
+    from { transform: translateY(22px); }
+    to   { transform: translateY(0);    }
 }
 
 /* Scroll-triggered gentle entrance — never hides content */
