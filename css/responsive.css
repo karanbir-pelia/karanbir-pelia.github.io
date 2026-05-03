@@ -114,6 +114,12 @@
     .projects-grid { grid-template-columns: 1fr; }
     .project-card.featured { grid-column: span 1; }
 
+    /* Publications */
+    .publication-card {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
     /* Contact: single col */
     .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
 
@@ -156,6 +162,8 @@
     .edu-header { flex-direction: column; gap: 0.75rem; }
 
     .contact-form-panel { padding: 1.5rem; }
+
+    .publication-card { padding: 1.5rem; }
 
     /* (stat-number removed) */
 }
