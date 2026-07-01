@@ -93,6 +93,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .about-skills-panel { position: static; }
     .about-text { padding: 1.5rem; }
+    .skill-categories { flex-direction: column; }
 
     /* Education: single col */
     .edu-grid { grid-template-columns: 1fr; }

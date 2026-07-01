@@ -7,7 +7,7 @@
 
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
+    grid-template-columns: 0.9fr 1.3fr;
     gap: 3rem;
     align-items: start;
 }
@@ -53,12 +53,20 @@
     line-height: 1.88;
 }
 
-/* Skill categories */
+/* Skill categories — split into two explicit columns so the panel's total
+   height stays balanced against the bio card instead of one long stack */
 .skill-categories {
+    display: flex;
+    gap: 1.75rem;
+    margin-top: 0.5rem;
+}
+
+.skill-col {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    margin-top: 0.5rem;
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .skill-category {
@@ -534,8 +542,8 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 2rem;
+    gap: 1rem;
+    padding: 1.5rem 1.75rem;
 }
 
 .project-banner-glow {
@@ -543,43 +551,44 @@
     inset: 0;
 }
 
-/* Different banner colours per card via data attr or class */
-.project-card:nth-child(1) .project-banner-glow {
+/* Different banner colours per card, cycling every 6 so the pattern still
+   applies no matter how many project cards are added later */
+.project-card:nth-child(6n + 1) .project-banner-glow {
     background: linear-gradient(
         135deg,
         rgba(124, 58, 237, 0.35) 0%,
         rgba(5, 150, 105, 0.15) 100%
     );
 }
-.project-card:nth-child(2) .project-banner-glow {
+.project-card:nth-child(6n + 2) .project-banner-glow {
     background: linear-gradient(
         135deg,
         rgba(5, 150, 105, 0.3) 0%,
         rgba(124, 58, 237, 0.15) 100%
     );
 }
-.project-card:nth-child(3) .project-banner-glow {
+.project-card:nth-child(6n + 3) .project-banner-glow {
     background: linear-gradient(
         135deg,
         rgba(245, 158, 11, 0.25) 0%,
         rgba(124, 58, 237, 0.15) 100%
     );
 }
-.project-card:nth-child(4) .project-banner-glow {
+.project-card:nth-child(6n + 4) .project-banner-glow {
     background: linear-gradient(
         135deg,
         rgba(239, 68, 68, 0.2) 0%,
         rgba(245, 158, 11, 0.2) 100%
     );
 }
-.project-card:nth-child(5) .project-banner-glow {
+.project-card:nth-child(6n + 5) .project-banner-glow {
     background: linear-gradient(
         135deg,
         rgba(59, 130, 246, 0.2) 0%,
         rgba(5, 150, 105, 0.2) 100%
     );
 }
-.project-card:nth-child(6) .project-banner-glow {
+.project-card:nth-child(6n + 6) .project-banner-glow {
     background: linear-gradient(
         135deg,
         rgba(5, 150, 105, 0.25) 0%,
@@ -589,6 +598,7 @@
 
 .project-icon-wrap {
     position: relative;
+    flex-shrink: 0;
     width: 52px;
     height: 52px;
     border-radius: var(--radius-sm);
@@ -604,6 +614,7 @@
 
 .project-links-top {
     display: flex;
+    flex-shrink: 0;
     gap: 0.5rem;
     z-index: 1;
 }
@@ -638,12 +649,19 @@
     padding: 1.5rem 1.75rem 1.75rem;
 }
 
-.project-name {
+.project-banner .project-name {
+    position: relative;
+    flex: 1;
+    min-width: 0;
     font-family: "Space Grotesk", sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.6rem;
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .project-desc {

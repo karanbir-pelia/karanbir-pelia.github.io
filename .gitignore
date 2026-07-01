@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Claude Code (local-only settings; shared config stays tracked)
+.claude/settings.local.json
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local
+
+# Node (in case tooling is added later)
+node_modules/

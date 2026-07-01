@@ -9,11 +9,11 @@
         <meta name="title" content="Karanbir Singh Pelia | Software Engineer" />
         <meta
             name="description"
-            content="Karanbir Singh Pelia is a Software Engineer and MS Computer Science student at Stony Brook University. Specialising in backend systems, distributed systems, REST APIs, automation platforms, LLM-powered tools, and real-time ML applications. Open to full-time roles starting May 2026."
+            content="Karanbir Singh Pelia — Software Engineer (MS CS, Stony Brook University) building backend, distributed systems, and RAG/LLM-powered applications."
         />
         <meta
             name="keywords"
-            content="Karanbir Singh Pelia, Software Engineer, Backend Engineer, Distributed Systems, Java, Spring Boot, Python, FastAPI, Kafka, gRPC, RAFT, PostgreSQL, Redis, Docker, Kubernetes, REST API, Machine Learning, AI, LLM, Ollama, Observability, Prometheus, Grafana, Stony Brook University, portfolio, software engineering portfolio, MS Computer Science"
+            content="Karanbir Singh Pelia, Software Engineer, Backend Engineer, Distributed Systems, Java, Spring Boot, Python, FastAPI, Flask, React, Kafka, gRPC, RAFT, PostgreSQL, Redis, Docker, Kubernetes, REST API, Machine Learning, AI, LLM, RAG, ChromaDB, Ollama, Observability, Prometheus, Grafana, Avro, Stony Brook University, portfolio, software engineering portfolio, MS Computer Science"
         />
         <meta name="author" content="Karanbir Singh Pelia" />
         <meta
@@ -42,14 +42,14 @@
         />
         <meta
             property="og:description"
-            content="Software Engineer and MS CS student at Stony Brook University. Building backend and distributed systems, automation platforms, REST APIs, LLM-powered tools, and real-time ML applications. Open to full-time roles starting May 2026."
+            content="Software Engineer with an MS in Computer Science from Stony Brook University. Building backend and distributed systems, RAG/LLM-powered tools, and real-time ML applications. Open to full-time Software Engineering roles."
         />
         <meta
             property="og:image"
             content="https://karanbir-pelia.github.io/images/profile-circular.jpg"
         />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="800" />
+        <meta property="og:image:height" content="800" />
         <meta
             property="og:image:alt"
             content="Karanbir Singh Pelia – Software Engineer"
@@ -63,7 +63,7 @@
         <meta property="profile:last_name" content="Pelia" />
 
         <!-- Twitter / X -->
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:url" content="https://karanbir-pelia.github.io/" />
         <meta
             name="twitter:title"
@@ -71,7 +71,7 @@
         />
         <meta
             name="twitter:description"
-            content="Software Engineer and MS CS student at Stony Brook University. Building backend and distributed systems, automation platforms, REST APIs, LLM-powered tools, and real-time ML applications. Open to full-time roles starting May 2026."
+            content="Software Engineer with an MS in Computer Science from Stony Brook University. Building backend and distributed systems, RAG/LLM-powered tools, and real-time ML applications. Open to full-time Software Engineering roles."
         />
         <meta
             name="twitter:image"
@@ -129,8 +129,8 @@
                 "url": "https://karanbir-pelia.github.io/",
                 "image": "https://karanbir-pelia.github.io/images/profile-circular.jpg",
                 "jobTitle": "Software Engineer",
-                "description": "Software Engineer and MS Computer Science student at Stony Brook University specialising in backend systems, distributed systems, REST APIs, automation platforms, and real-time ML applications.",
-                "email": "pelia.karanbirsingh@gmail.com",
+                "description": "Software Engineer with an MS in Computer Science from Stony Brook University, specialising in backend systems, distributed systems, REST APIs, RAG/LLM-powered tools, and real-time ML applications.",
+                "email": "karanbirsinghpelia@gmail.com",
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Stony Brook",
@@ -172,7 +172,11 @@
                     "MySQL",
                     "JavaScript",
                     "TensorFlow",
-                    "OpenCV"
+                    "OpenCV",
+                    "Retrieval-Augmented Generation",
+                    "ChromaDB",
+                    "React",
+                    "Avro"
                 ],
                 "sameAs": [
                     "https://github.com/karanbir-pelia",
@@ -189,13 +193,11 @@
                 "@id": "https://karanbir-pelia.github.io/",
                 "url": "https://karanbir-pelia.github.io/",
                 "name": "Karanbir Singh Pelia | Software Engineer Portfolio",
-                "description": "Portfolio of Karanbir Singh Pelia — Software Engineer specialising in backend systems, distributed systems, automation platforms, and real-time applications. MS CS student at Stony Brook University.",
-                "dateModified": "2026-05-02",
+                "description": "Portfolio of Karanbir Singh Pelia — Software Engineer specialising in backend systems, distributed systems, RAG/LLM-powered tools, and real-time applications. MS in Computer Science from Stony Brook University.",
+                "dateModified": "2026-07-01",
                 "inLanguage": "en-US",
                 "isPartOf": {
-                    "@type": "WebSite",
-                    "url": "https://karanbir-pelia.github.io/",
-                    "name": "Karanbir Singh Pelia Portfolio"
+                    "@id": "https://karanbir-pelia.github.io/#website"
                 },
                 "about": {
                     "@id": "https://karanbir-pelia.github.io/#karanbir"
@@ -222,6 +224,117 @@
                         }
                     ]
                 }
+            }
+        </script>
+
+        <!-- Structured Data: WebSite -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://karanbir-pelia.github.io/#website",
+                "url": "https://karanbir-pelia.github.io/",
+                "name": "Karanbir Singh Pelia Portfolio",
+                "inLanguage": "en-US",
+                "publisher": {
+                    "@id": "https://karanbir-pelia.github.io/#karanbir"
+                }
+            }
+        </script>
+
+        <!-- Structured Data: Projects -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Karanbir Singh Pelia — Featured Projects",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "Entitle",
+                            "description": "Privacy-first RAG agent that matches users to federal and state safety-net programs from a free-form description of their household.",
+                            "codeRepository": "https://github.com/karanbir-pelia/entitle",
+                            "programmingLanguage": ["Python", "React"],
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "MediGrid",
+                            "description": "Fault-tolerant medical resource availability platform implementing RAFT consensus from scratch over gRPC with Kafka, PostgreSQL, and Redis.",
+                            "codeRepository": "https://github.com/karanbir-pelia/medigrid",
+                            "programmingLanguage": ["Java"],
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "AgentFlow",
+                            "description": "Turns plain English into executable API workflows using a local Llama 3 model, with zero cloud dependency.",
+                            "codeRepository": "https://github.com/karanbir-pelia/agentflow",
+                            "programmingLanguage": ["Python"],
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "TrackDesk",
+                            "description": "Production-grade ticket management API built with Java and Spring Boot, fully observable via Micrometer, Prometheus, and Grafana.",
+                            "codeRepository": "https://github.com/karanbir-pelia/trackdesk",
+                            "programmingLanguage": ["Java"],
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "Site to Slides",
+                            "description": "Converts any public webpage into a ready-to-present slideshow by reverse-engineering an undocumented third-party API.",
+                            "codeRepository": "https://github.com/karanbir-pelia/site-to-slides",
+                            "programmingLanguage": ["Python"],
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 6,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "Fatigue Sense",
+                            "description": "Real-time driver safety system unifying a Keras CNN with MediaPipe Pose and Hand tracking at 95% classification accuracy.",
+                            "codeRepository": "https://github.com/karanbir-pelia/fatigue-sense",
+                            "programmingLanguage": ["Python"],
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 7,
+                        "item": {
+                            "@type": "SoftwareSourceCode",
+                            "name": "AgroDoc",
+                            "description": "Full-stack plant disease detection web app using a TensorFlow CNN, classifying 38 conditions across 14 crops at 97.38% accuracy.",
+                            "codeRepository": "https://github.com/karanbir-pelia/agrodoc",
+                            "programmingLanguage": ["Python"],
+                            "url": "https://agrodoc.streamlit.app/",
+                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                        }
+                    }
+                ]
             }
         </script>
     </head>
@@ -309,7 +422,7 @@
                 <div class="hero-content">
                     <div class="hero-badge">
                         <span class="badge-dot"></span>
-                        Available for full-time roles starting May 2026
+                        Open to full-time Software Engineering roles
                     </div>
 
                     <h1 class="hero-title">
@@ -319,11 +432,11 @@
 
                     <p class="hero-subtitle">
                         Software Engineer building reliable backend and
-                        distributed systems, automation platforms, and real-time
-                        ML applications. MS Computer Science student at
+                        distributed systems, RAG/LLM-powered tools, and real-time
+                        ML applications. MS in Computer Science from
                         <span class="highlight-text"
                             >Stony Brook University</span
-                        >, graduating May 2026.
+                        >, graduated May 2026.
                     </p>
 
                     <div class="hero-cta">
@@ -345,7 +458,7 @@
                         <a
                             href="https://github.com/karanbir-pelia"
                             target="_blank"
-                            rel="noopener"
+                            rel="me noopener"
                             aria-label="GitHub"
                             class="social-link"
                         >
@@ -354,14 +467,14 @@
                         <a
                             href="https://linkedin.com/in/karanbir-pelia"
                             target="_blank"
-                            rel="noopener"
+                            rel="me noopener"
                             aria-label="LinkedIn"
                             class="social-link"
                         >
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a
-                            href="mailto:pelia.karanbirsingh@gmail.com"
+                            href="mailto:karanbirsinghpelia@gmail.com"
                             aria-label="Email"
                             class="social-link"
                         >
@@ -433,25 +546,27 @@
                     <!-- LEFT: bio text panel -->
                     <div class="about-text">
                         <p>
-                            I'm a Software Engineer and CS graduate student at
-                            Stony Brook University, passionate about building
-                            reliable backend systems, distributed platforms, and
-                            automation tools. I enjoy turning complex problems
-                            into clean, well-tested solutions.
+                            I'm a Software Engineer with an MS in Computer
+                            Science from Stony Brook University, passionate about
+                            building reliable backend systems, distributed
+                            platforms, and automation tools. I enjoy turning
+                            complex problems into clean, well-tested solutions.
                         </p>
                         <p>
                             My experience spans building REST APIs with Spring
-                            Boot and FastAPI, crafting AI-powered automation
-                            systems, and developing ML models for real-world
-                            applications. I care deeply about code quality,
-                            observability, fault tolerance, and iterative
-                            development.
+                            Boot and FastAPI, crafting RAG/LLM-powered
+                            applications, and developing ML models for
+                            real-world use cases. I care deeply about code
+                            quality, observability, fault tolerance, and
+                            iterative development.
                         </p>
                         <p>
-                            I'm currently open to full-time Software Engineering
-                            roles starting
-                            <span class="highlight-text">May 2026</span> — feel
-                            free to reach out or
+                            I'm currently
+                            <span class="highlight-text"
+                                >open to full-time Software Engineering
+                                roles</span
+                            >
+                            — feel free to reach out or
                             <a
                                 href="files/Karanbir Singh Pelia Resume.pdf"
                                 download
@@ -471,87 +586,152 @@
                         <div class="about-skills-title">Skills &amp; Stack</div>
 
                         <div class="skill-categories">
-                            <div class="skill-category">
-                                <span class="skill-category-label"
-                                    ><i class="fas fa-code"></i> Languages</span
-                                >
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">Java</span>
-                                    <span class="skill-tag">C++</span>
-                                    <span class="skill-tag">JavaScript</span>
-                                    <span class="skill-tag">SQL</span>
-                                    <span class="skill-tag">HTML</span>
-                                    <span class="skill-tag">CSS</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <span class="skill-category-label"
-                                    ><i class="fas fa-server"></i> Backend</span
-                                >
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Spring Boot</span>
-                                    <span class="skill-tag">FastAPI</span>
-                                    <span class="skill-tag">REST APIs</span>
-                                    <span class="skill-tag">Kafka</span>
-                                    <span class="skill-tag">gRPC</span>
-                                    <span class="skill-tag">RAFT</span>
-                                    <span class="skill-tag">PostgreSQL</span>
-                                    <span class="skill-tag">Redis</span>
-                                    <span class="skill-tag">MongoDB</span>
-                                    <span class="skill-tag">MySQL</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <span class="skill-category-label"
-                                    ><i class="fas fa-vial"></i> Testing &amp;
-                                    DevOps</span
-                                >
-                                <div class="skill-tags">
-                                    <span class="skill-tag">JUnit 5</span>
-                                    <span class="skill-tag">Mockito</span>
-                                    <span class="skill-tag">Pytest</span>
-                                    <span class="skill-tag">Docker</span>
-                                    <span class="skill-tag">Kubernetes</span>
-                                    <span class="skill-tag">Jenkins</span>
-                                    <span class="skill-tag">CI/CD</span>
-                                    <span class="skill-tag">Git</span>
-                                    <span class="skill-tag">GitHub</span>
-                                    <span class="skill-tag">Postman</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <span class="skill-category-label"
-                                    ><i class="fas fa-chart-line"></i>
-                                    Observability</span
-                                >
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Prometheus</span>
-                                    <span class="skill-tag">Grafana</span>
-                                    <span class="skill-tag">Micrometer</span>
-                                    <span class="skill-tag">Log Analysis</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <span class="skill-category-label"
-                                    ><i class="fas fa-brain"></i> AI / ML</span
-                                >
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Ollama / LLMs</span>
-                                    <span class="skill-tag">Claude Code</span>
-                                    <span class="skill-tag"
-                                        >GitHub Copilot</span
+                            <div class="skill-col">
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-code"></i>
+                                        Languages</span
                                     >
-                                    <span class="skill-tag">Cursor</span>
-                                    <span class="skill-tag">Codex</span>
-                                    <span class="skill-tag">TensorFlow</span>
-                                    <span class="skill-tag">OpenCV</span>
-                                    <span class="skill-tag"
-                                        >Prompt Engineering</span
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Python</span>
+                                        <span class="skill-tag">Java</span>
+                                        <span class="skill-tag">C++</span>
+                                        <span class="skill-tag"
+                                            >JavaScript</span
+                                        >
+                                        <span class="skill-tag">SQL</span>
+                                        <span class="skill-tag">HTML</span>
+                                        <span class="skill-tag">CSS</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-server"></i>
+                                        Backend</span
                                     >
-                                    <span class="skill-tag"
-                                        >LLM Output Evaluation</span
+                                    <div class="skill-tags">
+                                        <span class="skill-tag"
+                                            >Spring Boot</span
+                                        >
+                                        <span class="skill-tag">FastAPI</span>
+                                        <span class="skill-tag">Flask</span>
+                                        <span class="skill-tag">REST APIs</span>
+                                        <span class="skill-tag">asyncio</span>
+                                        <span class="skill-tag">Pydantic</span>
+                                        <span class="skill-tag">Kafka</span>
+                                        <span class="skill-tag">gRPC</span>
+                                        <span class="skill-tag">RAFT</span>
+                                        <span class="skill-tag"
+                                            >PostgreSQL</span
+                                        >
+                                        <span class="skill-tag">Redis</span>
+                                        <span class="skill-tag">MongoDB</span>
+                                        <span class="skill-tag">MySQL</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-window-maximize"></i>
+                                        Frontend</span
                                     >
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">React</span>
+                                        <span class="skill-tag"
+                                            >Tailwind CSS</span
+                                        >
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-database"></i> Data
+                                        Engineering</span
+                                    >
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Avro</span>
+                                        <span class="skill-tag"
+                                            >Confluent Schema Registry</span
+                                        >
+                                        <span class="skill-tag">Parquet</span>
+                                        <span class="skill-tag">PyArrow</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-col">
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-vial"></i> Testing
+                                        &amp; DevOps</span
+                                    >
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">JUnit 5</span>
+                                        <span class="skill-tag">Mockito</span>
+                                        <span class="skill-tag">Pytest</span>
+                                        <span class="skill-tag">Docker</span>
+                                        <span class="skill-tag"
+                                            >Kubernetes</span
+                                        >
+                                        <span class="skill-tag">Jenkins</span>
+                                        <span class="skill-tag">CI/CD</span>
+                                        <span class="skill-tag">Git</span>
+                                        <span class="skill-tag">GitHub</span>
+                                        <span class="skill-tag">Postman</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-chart-line"></i>
+                                        Observability</span
+                                    >
+                                    <div class="skill-tags">
+                                        <span class="skill-tag"
+                                            >Prometheus</span
+                                        >
+                                        <span class="skill-tag">Grafana</span>
+                                        <span class="skill-tag"
+                                            >Micrometer</span
+                                        >
+                                        <span class="skill-tag"
+                                            >Log Analysis</span
+                                        >
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <span class="skill-category-label"
+                                        ><i class="fas fa-brain"></i> AI /
+                                        ML</span
+                                    >
+                                    <div class="skill-tags">
+                                        <span class="skill-tag"
+                                            >Ollama / LLMs</span
+                                        >
+                                        <span class="skill-tag">RAG</span>
+                                        <span class="skill-tag">ChromaDB</span>
+                                        <span class="skill-tag"
+                                            >sentence-transformers</span
+                                        >
+                                        <span class="skill-tag"
+                                            >Claude Code</span
+                                        >
+                                        <span class="skill-tag"
+                                            >GitHub Copilot</span
+                                        >
+                                        <span class="skill-tag">Cursor</span>
+                                        <span class="skill-tag">Codex</span>
+                                        <span class="skill-tag"
+                                            >Google Antigravity</span
+                                        >
+                                        <span class="skill-tag"
+                                            >TensorFlow</span
+                                        >
+                                        <span class="skill-tag">OpenCV</span>
+                                        <span class="skill-tag">NumPy</span>
+                                        <span class="skill-tag"
+                                            >Prompt Engineering</span
+                                        >
+                                        <span class="skill-tag"
+                                            >LLM Output Evaluation</span
+                                        >
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -603,7 +783,7 @@
                                 May 2026</span
                             >
                             <span class="edu-badge amber"
-                                ><i class="fas fa-star"></i> Attending
+                                ><i class="fas fa-star"></i> Graduated
                             </span>
                         </div>
                         <div class="edu-courses">
@@ -714,7 +894,7 @@
                             <div class="exp-header">
                                 <div>
                                     <div class="exp-role">
-                                        Software Developer Intern
+                                        Software Engineer Intern
                                     </div>
                                     <div class="exp-company">Infrrd Inc.</div>
                                 </div>
@@ -732,33 +912,36 @@
                             </div>
                             <div class="exp-points">
                                 <div class="exp-point">
-                                    Led development of an internal testing
-                                    platform using FastAPI and REST APIs,
-                                    enabling evaluation of document processing
-                                    pipelines.
+                                    Built an internal FastAPI evaluation
+                                    platform automating accuracy benchmarking
+                                    across document processing pipelines,
+                                    standardizing QA workflows and cutting
+                                    manual effort roughly in half.
                                 </div>
                                 <div class="exp-point">
-                                    Built automated test pipelines for
-                                    classification and extraction systems,
-                                    enabling accuracy tracking and reducing
-                                    manual QA effort.
+                                    Strengthened an LLM-based document
+                                    verification framework, resolving
+                                    misclassification issues and lifting
+                                    extraction accuracy on key document fields
+                                    by over 20 percentage points.
                                 </div>
                                 <div class="exp-point">
-                                    Implemented new backend features and
-                                    enhanced existing workflows in Agile
-                                    sprints, supporting evolving business
-                                    requirements.
+                                    Shipped feature-flagged production releases
+                                    with output validation and fallback
+                                    handling, enabling zero-downtime rollouts
+                                    across Agile sprints.
                                 </div>
                                 <div class="exp-point">
-                                    Debugged Python backend workflows and
-                                    resolved production issues using log
-                                    analysis and systematic root-cause
-                                    investigation.
+                                    Built a stateless async replay endpoint for
+                                    classification testing, removing the need
+                                    to re-run the full pipeline and speeding up
+                                    debugging and QA turnaround.
                                 </div>
                             </div>
                             <div class="exp-tags">
                                 <span class="exp-tag">Python</span>
                                 <span class="exp-tag">FastAPI</span>
+                                <span class="exp-tag">Flask</span>
                                 <span class="exp-tag">REST APIs</span>
                                 <span class="exp-tag">MongoDB</span>
                                 <span class="exp-tag">Jenkins</span>
@@ -903,6 +1086,51 @@
                 </div>
 
                 <div class="projects-grid">
+                    <!-- Entitle (featured) -->
+                    <div class="project-card">
+                        <div class="project-banner">
+                            <div class="project-banner-glow"></div>
+                            <div class="project-icon-wrap">
+                                <i
+                                    class="fas fa-hand-holding-heart"
+                                    style="color: #60a5fa"
+                                ></i>
+                            </div>
+                            <div class="project-name">Entitle</div>
+                            <div class="project-links-top">
+                                <a
+                                    href="https://github.com/karanbir-pelia/entitle"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="project-link-icon"
+                                    aria-label="GitHub"
+                                    ><i class="fab fa-github"></i
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <p class="project-desc">
+                                Privacy-first RAG agent that turns a free-form
+                                description of someone's household into a
+                                structured profile and matches it against 15
+                                federal and 14 state safety-net programs,
+                                surfacing $2,500+ in monthly benefits. Runs
+                                fully offline via Ollama, with a document reader
+                                that explains photographed benefit notices and
+                                denial letters in plain language.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span
+                                ><span class="project-tag">FastAPI</span
+                                ><span class="project-tag">React</span
+                                ><span class="project-tag">Tailwind CSS</span
+                                ><span class="project-tag">Gemma 4</span
+                                ><span class="project-tag">ChromaDB</span
+                                ><span class="project-tag">Ollama</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- MediGrid (featured) -->
                     <div class="project-card">
                         <div class="project-banner">
@@ -913,6 +1141,7 @@
                                     style="color: #a78bfa"
                                 ></i>
                             </div>
+                            <div class="project-name">MediGrid</div>
                             <div class="project-links-top">
                                 <a
                                     href="https://github.com/karanbir-pelia/medigrid"
@@ -925,25 +1154,28 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <div class="project-name">MediGrid</div>
                             <p class="project-desc">
                                 Fault-tolerant medical resource availability
                                 platform built with Spring Boot, Kafka, gRPC,
                                 RAFT, PostgreSQL, Redis, Docker, and Kubernetes.
-                                Maintains write availability through majority
-                                quorum, streams real-time updates, and issues
-                                zero-availability alerts.
+                                Implements RAFT consensus from scratch to
+                                maintain write availability under node
+                                failures, validates streamed updates against
+                                Avro schemas, and powers OLAP analytics through
+                                a Parquet-exportable history store.
                             </p>
                             <div class="project-tags">
                                 <span class="project-tag">Java</span
                                 ><span class="project-tag">Spring Boot</span
                                 ><span class="project-tag">Kafka</span
+                                ><span class="project-tag">Avro</span
                                 ><span class="project-tag">gRPC</span
                                 ><span class="project-tag">RAFT</span
                                 ><span class="project-tag">PostgreSQL</span
                                 ><span class="project-tag">Redis</span
                                 ><span class="project-tag">Docker</span
-                                ><span class="project-tag">Kubernetes</span>
+                                ><span class="project-tag">Kubernetes</span
+                                ><span class="project-tag">Prometheus</span>
                             </div>
                         </div>
                     </div>
@@ -958,6 +1190,7 @@
                                     style="color: #34d399"
                                 ></i>
                             </div>
+                            <div class="project-name">AgentFlow</div>
                             <div class="project-links-top">
                                 <a
                                     href="https://github.com/karanbir-pelia/agentflow"
@@ -970,7 +1203,6 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <div class="project-name">AgentFlow</div>
                             <p class="project-desc">
                                 Turns plain English into executable API
                                 workflows. Local Llama 3 reasons over tasks,
@@ -998,6 +1230,7 @@
                                     style="color: #34d399"
                                 ></i>
                             </div>
+                            <div class="project-name">TrackDesk</div>
                             <div class="project-links-top">
                                 <a
                                     href="https://github.com/karanbir-pelia/trackdesk"
@@ -1010,7 +1243,6 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <div class="project-name">TrackDesk</div>
                             <p class="project-desc">
                                 Production-grade ticket management API built
                                 with Java and Spring Boot. Fully observable via
@@ -1039,6 +1271,7 @@
                                     style="color: #fb923c"
                                 ></i>
                             </div>
+                            <div class="project-name">Site to Slides</div>
                             <div class="project-links-top">
                                 <a
                                     href="https://github.com/karanbir-pelia/site-to-slides"
@@ -1051,7 +1284,6 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <div class="project-name">Site to Slides</div>
                             <p class="project-desc">
                                 Paste a URL, get a ready-to-present slideshow.
                                 Reverse-engineered undocumented API endpoints
@@ -1079,6 +1311,7 @@
                                     style="color: #f472b6"
                                 ></i>
                             </div>
+                            <div class="project-name">Fatigue Sense</div>
                             <div class="project-links-top">
                                 <a
                                     href="https://github.com/karanbir-pelia/fatigue-sense"
@@ -1091,7 +1324,6 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <div class="project-name">Fatigue Sense</div>
                             <p class="project-desc">
                                 Real-time driver safety system unifying a Keras
                                 CNN with MediaPipe Pose and Hand tracking across
@@ -1120,6 +1352,7 @@
                                     style="color: #4ade80"
                                 ></i>
                             </div>
+                            <div class="project-name">AgroDoc</div>
                             <div class="project-links-top">
                                 <a
                                     href="https://github.com/karanbir-pelia/agrodoc"
@@ -1140,7 +1373,6 @@
                             </div>
                         </div>
                         <div class="project-body">
-                            <div class="project-name">AgroDoc</div>
                             <p class="project-desc">
                                 Full-stack plant disease detection web app using
                                 a TensorFlow CNN served via Streamlit,
@@ -1240,11 +1472,11 @@
                     <div class="contact-info-panel">
                         <p class="contact-intro">
                             I'm currently open to full-time software engineering
-                            roles starting May 2026. Feel free to reach out.
+                            roles. Feel free to reach out.
                         </p>
 
                         <a
-                            href="mailto:pelia.karanbirsingh@gmail.com"
+                            href="mailto:karanbirsinghpelia@gmail.com"
                             class="contact-card"
                         >
                             <div class="contact-card-icon violet">
@@ -1253,7 +1485,7 @@
                             <div>
                                 <div class="contact-card-label">Email</div>
                                 <div class="contact-card-value">
-                                    pelia.karanbirsingh@gmail.com
+                                    karanbirsinghpelia@gmail.com
                                 </div>
                             </div>
                         </a>
@@ -1261,7 +1493,7 @@
                         <a
                             href="https://linkedin.com/in/karanbir-pelia"
                             target="_blank"
-                            rel="noopener"
+                            rel="me noopener"
                             class="contact-card"
                         >
                             <div class="contact-card-icon violet">
@@ -1278,7 +1510,7 @@
                         <a
                             href="https://github.com/karanbir-pelia"
                             target="_blank"
-                            rel="noopener"
+                            rel="me noopener"
                             class="contact-card"
                         >
                             <div class="contact-card-icon emerald">
@@ -1395,19 +1627,19 @@
                     <a
                         href="https://github.com/karanbir-pelia"
                         target="_blank"
-                        rel="noopener"
+                        rel="me noopener"
                         aria-label="GitHub"
                         ><i class="fab fa-github"></i
                     ></a>
                     <a
                         href="https://linkedin.com/in/karanbir-pelia"
                         target="_blank"
-                        rel="noopener"
+                        rel="me noopener"
                         aria-label="LinkedIn"
                         ><i class="fab fa-linkedin"></i
                     ></a>
                     <a
-                        href="mailto:pelia.karanbirsingh@gmail.com"
+                        href="mailto:karanbirsinghpelia@gmail.com"
                         aria-label="Email"
                         ><i class="fas fa-envelope"></i
                     ></a>
