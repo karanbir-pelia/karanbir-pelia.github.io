@@ -216,7 +216,7 @@ section {
 .btn--outline {
     background: transparent;
     color: var(--text);
-    border-color: var(--border-strong);
+    border-color: var(--border-strongest);
 }
 .btn--outline:hover {
     border-color: var(--accent);
