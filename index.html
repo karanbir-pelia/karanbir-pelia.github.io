@@ -4,6 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <!-- Detect motion preference before first paint so scroll-reveal
+             never depends on JS to show content (see styles.css .has-motion) -->
+        <script>
+            if (
+                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+                document.documentElement.classList.add("has-motion");
+            }
+        </script>
+
         <!-- Primary Meta Tags -->
         <title>Karanbir Singh Pelia | Software Engineer</title>
         <meta name="title" content="Karanbir Singh Pelia | Software Engineer" />
@@ -31,7 +41,7 @@
         <link rel="canonical" href="https://karanbir-pelia.github.io/" />
 
         <!-- Mobile theme colour -->
-        <meta name="theme-color" content="#0a0f1e" />
+        <meta name="theme-color" content="#0a0d12" />
 
         <!-- Open Graph -->
         <meta property="og:type" content="profile" />
@@ -94,7 +104,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-        <!-- Preload LCP image (profile photo is the Largest Contentful Paint element) -->
+        <!-- Preload LCP-adjacent image -->
         <link
             rel="preload"
             as="image"
@@ -104,7 +114,7 @@
 
         <!-- Fonts -->
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link
@@ -208,9 +218,9 @@
                 "speakable": {
                     "@type": "SpeakableSpecification",
                     "cssSelector": [
-                        ".hero-title",
-                        ".hero-subtitle",
-                        ".about-text"
+                        ".hero__title",
+                        ".hero__subtitle",
+                        ".about__bio"
                     ]
                 },
                 "breadcrumb": {
@@ -258,7 +268,9 @@
                             "description": "Privacy-first RAG agent that matches users to federal and state safety-net programs from a free-form description of their household.",
                             "codeRepository": "https://github.com/karanbir-pelia/entitle",
                             "programmingLanguage": ["Python", "React"],
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     },
                     {
@@ -270,7 +282,9 @@
                             "description": "Fault-tolerant medical resource availability platform implementing RAFT consensus from scratch over gRPC with Kafka, PostgreSQL, and Redis.",
                             "codeRepository": "https://github.com/karanbir-pelia/medigrid",
                             "programmingLanguage": ["Java"],
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     },
                     {
@@ -282,7 +296,9 @@
                             "description": "Turns plain English into executable API workflows using a local Llama 3 model, with zero cloud dependency.",
                             "codeRepository": "https://github.com/karanbir-pelia/agentflow",
                             "programmingLanguage": ["Python"],
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     },
                     {
@@ -294,7 +310,9 @@
                             "description": "Production-grade ticket management API built with Java and Spring Boot, fully observable via Micrometer, Prometheus, and Grafana.",
                             "codeRepository": "https://github.com/karanbir-pelia/trackdesk",
                             "programmingLanguage": ["Java"],
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     },
                     {
@@ -306,7 +324,9 @@
                             "description": "Converts any public webpage into a ready-to-present slideshow by reverse-engineering an undocumented third-party API.",
                             "codeRepository": "https://github.com/karanbir-pelia/site-to-slides",
                             "programmingLanguage": ["Python"],
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     },
                     {
@@ -318,7 +338,9 @@
                             "description": "Real-time driver safety system unifying a Keras CNN with MediaPipe Pose and Hand tracking at 95% classification accuracy.",
                             "codeRepository": "https://github.com/karanbir-pelia/fatigue-sense",
                             "programmingLanguage": ["Python"],
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     },
                     {
@@ -331,7 +353,9 @@
                             "codeRepository": "https://github.com/karanbir-pelia/agrodoc",
                             "programmingLanguage": ["Python"],
                             "url": "https://agrodoc.streamlit.app/",
-                            "author": { "@id": "https://karanbir-pelia.github.io/#karanbir" }
+                            "author": {
+                                "@id": "https://karanbir-pelia.github.io/#karanbir"
+                            }
                         }
                     }
                 ]
@@ -339,216 +363,238 @@
         </script>
     </head>
     <body>
-        <!-- ===== AMBIENT BACKGROUND ===== -->
-        <div class="ambient-bg" aria-hidden="true">
-            <div class="ambient-orb orb-1"></div>
-            <div class="ambient-orb orb-2"></div>
-            <div class="ambient-orb orb-3"></div>
-            <div class="ambient-orb orb-4"></div>
-        </div>
-        <div class="ambient-grid" aria-hidden="true"></div>
-
-        <!-- Floating particles -->
-        <div class="particle p1" aria-hidden="true"></div>
-        <div class="particle p2" aria-hidden="true"></div>
-        <div class="particle p3" aria-hidden="true"></div>
-        <div class="particle p4" aria-hidden="true"></div>
-        <div class="particle p5" aria-hidden="true"></div>
-        <div class="particle p6" aria-hidden="true"></div>
-
-        <!-- ===== NAVIGATION ===== -->
-        <nav id="navbar" role="navigation" aria-label="Main navigation">
-            <a href="#hero" class="nav-logo">
-                <span class="logo-icon"><i class="fas fa-bolt"></i></span>
-                <span class="logo-text">Karanbir Singh Pelia</span>
-            </a>
-
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li>
-                    <a href="#publications" class="nav-link">Publications</a>
-                </li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li class="nav-mobile-resume">
-                    <a
-                        href="files/Karanbir Singh Pelia Resume.pdf"
-                        download
-                        class="nav-link"
-                        ><i
-                            class="fas fa-download"
-                            style="margin-right: 0.5rem; color: var(--emerald)"
-                        ></i
-                        >Resume</a
-                    >
-                </li>
-            </ul>
-
-            <div class="nav-actions">
+        <!-- ===== NAV: desktop icon rail ===== -->
+        <nav id="rail" aria-label="Primary">
+            <a href="#hero" class="rail__brand" aria-label="Home">KP</a>
+            <div class="rail__nav">
+                <a href="#about" class="rail__link" data-section="about">
+                    <i class="fas fa-user"></i><span>About</span>
+                </a>
+                <a
+                    href="#education"
+                    class="rail__link"
+                    data-section="education"
+                >
+                    <i class="fas fa-graduation-cap"></i><span>Edu</span>
+                </a>
+                <a
+                    href="#experience"
+                    class="rail__link"
+                    data-section="experience"
+                >
+                    <i class="fas fa-briefcase"></i><span>Work</span>
+                </a>
+                <a href="#projects" class="rail__link" data-section="projects">
+                    <i class="fas fa-diagram-project"></i><span>Projects</span>
+                </a>
+                <a
+                    href="#publications"
+                    class="rail__link"
+                    data-section="publications"
+                >
+                    <i class="fas fa-book-open"></i><span>Papers</span>
+                </a>
+                <a href="#contact" class="rail__link" data-section="contact">
+                    <i class="fas fa-envelope"></i><span>Contact</span>
+                </a>
+            </div>
+            <div class="rail__bottom">
                 <a
                     href="files/Karanbir Singh Pelia Resume.pdf"
                     download
-                    class="nav-resume-btn"
+                    class="rail__resume"
                     aria-label="Download Resume"
                 >
                     <i class="fas fa-download"></i>
-                    <span>Resume</span>
                 </a>
-                <button
-                    class="hamburger"
-                    id="hamburger"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                >
-                    <span></span><span></span><span></span>
-                </button>
             </div>
         </nav>
 
-        <!-- Mobile overlay -->
-        <div
-            class="mobile-menu-overlay"
-            id="mobileOverlay"
-            aria-hidden="true"
-        ></div>
+        <!-- ===== NAV: mobile bottom tab bar ===== -->
+        <nav id="tabbar" aria-label="Primary mobile">
+            <div class="tabbar__inner">
+                <a
+                    href="#hero"
+                    class="tabbar__link"
+                    data-section="hero"
+                    aria-label="Home"
+                >
+                    <i class="fas fa-house"></i>
+                </a>
+                <a
+                    href="#about"
+                    class="tabbar__link"
+                    data-section="about"
+                    aria-label="About"
+                >
+                    <i class="fas fa-user"></i>
+                </a>
+                <a
+                    href="#experience"
+                    class="tabbar__link"
+                    data-section="experience"
+                    aria-label="Experience"
+                >
+                    <i class="fas fa-briefcase"></i>
+                </a>
+                <a
+                    href="#projects"
+                    class="tabbar__link"
+                    data-section="projects"
+                    aria-label="Projects"
+                >
+                    <i class="fas fa-diagram-project"></i>
+                </a>
+                <a
+                    href="#contact"
+                    class="tabbar__link"
+                    data-section="contact"
+                    aria-label="Contact"
+                >
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a
+                    href="files/Karanbir Singh Pelia Resume.pdf"
+                    download
+                    class="tabbar__link tabbar__link--resume"
+                    aria-label="Download Resume"
+                >
+                    <i class="fas fa-download"></i>
+                </a>
+            </div>
+        </nav>
 
         <main>
             <!-- ========================================================
                  HERO
                  ======================================================== -->
             <section id="hero" aria-label="Introduction">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        Open to full-time Software Engineering roles
+                <div class="hero__grid">
+                    <div class="hero__main" data-reveal>
+                        <span class="eyebrow">Software Engineer</span>
+                        <div class="status-pill hero__status">
+                            <span class="status-dot"></span>
+                            Open to full-time SWE roles
+                        </div>
+                        <h1 class="hero__title">
+                            Hi, I'm
+                            <span class="accent-text">Karanbir Singh</span>
+                        </h1>
+                        <p class="hero__subtitle">
+                            Software Engineer building reliable backend and
+                            distributed systems, RAG/LLM-powered tools, and
+                            real-time ML applications. MS in Computer Science
+                            from
+                            <span class="cyan-text">Stony Brook University</span
+                            >, graduated May 2026.
+                        </p>
+                        <div class="hero__cta">
+                            <a href="#projects" class="btn btn--primary">
+                                <i class="fas fa-diagram-project"></i>
+                                View My Work
+                            </a>
+                            <a
+                                href="files/Karanbir Singh Pelia Resume.pdf"
+                                download
+                                class="btn btn--outline"
+                            >
+                                <i class="fas fa-download"></i>
+                                Download Resume
+                            </a>
+                        </div>
+                        <div class="hero__socials">
+                            <a
+                                href="https://github.com/karanbir-pelia"
+                                target="_blank"
+                                rel="me noopener"
+                                aria-label="GitHub"
+                                class="icon-btn icon-btn--lg"
+                            >
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a
+                                href="https://linkedin.com/in/karanbir-pelia"
+                                target="_blank"
+                                rel="me noopener"
+                                aria-label="LinkedIn"
+                                class="icon-btn icon-btn--lg"
+                            >
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a
+                                href="mailto:karanbirsinghpelia@gmail.com"
+                                aria-label="Email"
+                                class="icon-btn icon-btn--lg"
+                            >
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
                     </div>
 
-                    <h1 class="hero-title">
-                        Hi, I'm <br />
-                        <span class="gradient-text">Karanbir Singh</span>
-                    </h1>
-
-                    <p class="hero-subtitle">
-                        Software Engineer building reliable backend and
-                        distributed systems, RAG/LLM-powered tools, and real-time
-                        ML applications. MS in Computer Science from
-                        <span class="highlight-text"
-                            >Stony Brook University</span
-                        >, graduated May 2026.
-                    </p>
-
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-code"></i>
-                            View My Work
-                        </a>
-                        <a
-                            href="files/Karanbir Singh Pelia Resume.pdf"
-                            download
-                            class="btn btn-highlight"
-                        >
-                            <i class="fas fa-download"></i>
-                            Download Resume
-                        </a>
-                    </div>
-
-                    <div class="hero-socials">
-                        <a
-                            href="https://github.com/karanbir-pelia"
-                            target="_blank"
-                            rel="me noopener"
-                            aria-label="GitHub"
-                            class="social-link"
-                        >
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/karanbir-pelia"
-                            target="_blank"
-                            rel="me noopener"
-                            aria-label="LinkedIn"
-                            class="social-link"
-                        >
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a
-                            href="mailto:karanbirsinghpelia@gmail.com"
-                            aria-label="Email"
-                            class="social-link"
-                        >
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="hero__side" data-reveal>
+                        <div class="hero__card panel">
+                            <div class="hero__portrait">
+                                <img
+                                    src="images/profile-circular.jpg"
+                                    alt="Karanbir Singh Pelia — Software Engineer and MS Computer Science graduate of Stony Brook University"
+                                    width="132"
+                                    height="132"
+                                    loading="eager"
+                                    fetchpriority="high"
+                                />
+                            </div>
+                            <div class="hero__card-name">
+                                Karanbir Singh Pelia
+                            </div>
+                            <div class="hero__card-role">Software Engineer</div>
+                            <div class="metrics">
+                                <div class="metric">
+                                    <span class="metric__value" data-count="7"
+                                        >0</span
+                                    >
+                                    <span class="metric__label">Projects</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric__value" data-count="3"
+                                        >0</span
+                                    >
+                                    <span class="metric__label">Roles</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric__value" data-count="1"
+                                        >0</span
+                                    >
+                                    <span class="metric__label"
+                                        >Publication</span
+                                    >
+                                </div>
+                                <div class="metric">
+                                    <span class="metric__value">2026</span>
+                                    <span class="metric__label"
+                                        >MS CS Grad</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Profile photo with spinning rings -->
-                <div class="hero-image-wrapper">
-                    <div class="hero-glow"></div>
-                    <div class="hero-image-ring ring-1"></div>
-                    <div class="hero-image-ring ring-2"></div>
-                    <div class="hero-image-ring ring-3"></div>
-                    <div class="hero-image-container">
-                        <img
-                            src="images/profile-circular.jpg"
-                            alt="Karanbir Singh Pelia — Software Engineer and MS Computer Science student at Stony Brook University"
-                            class="hero-image"
-                            width="380"
-                            height="380"
-                            loading="eager"
-                            fetchpriority="high"
-                        />
-                    </div>
-
-                    <!-- Floating glass chips -->
-                    <div class="hero-chip chip-1">
-                        <i class="fas fa-server"></i>
-                        Backend Engineer
-                    </div>
-                    <div class="hero-chip chip-2">
-                        <i class="fas fa-brain"></i>
-                        AI / ML
-                    </div>
-                    <div class="hero-chip chip-3">
-                        <i class="fas fa-network-wired"></i>
-                        Distributed Systems
-                    </div>
-                </div>
-
-                <a
-                    href="#about"
-                    class="scroll-indicator"
-                    aria-label="Scroll down"
-                >
-                    <span class="scroll-label">Scroll</span>
-                    <div class="scroll-mouse">
-                        <div class="scroll-wheel"></div>
-                    </div>
-                </a>
             </section>
 
             <!-- ========================================================
                  ABOUT
                  ======================================================== -->
-            <div class="section-sep"></div>
             <section id="about" aria-label="About Me">
-                <div class="section-header">
-                    <span class="section-tag"
-                        ><i class="fas fa-user"></i> About Me</span
-                    >
-                    <h2 class="section-title">
-                        A Bit About <span class="gradient-text">Myself</span>
-                    </h2>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">About</span>
+                    <h2 class="section-title">A bit about myself</h2>
                 </div>
 
-                <div class="about-grid">
-                    <!-- LEFT: bio text panel -->
-                    <div class="about-text">
+                <div class="about__grid">
+                    <div class="about__bio panel" data-reveal>
                         <p>
                             I'm a Software Engineer with an MS in Computer
-                            Science from Stony Brook University, passionate about
-                            building reliable backend systems, distributed
+                            Science from Stony Brook University, passionate
+                            about building reliable backend systems, distributed
                             platforms, and automation tools. I enjoy turning
                             complex problems into clean, well-tested solutions.
                         </p>
@@ -562,7 +608,7 @@
                         </p>
                         <p>
                             I'm currently
-                            <span class="highlight-text"
+                            <span class="accent-text" style="font-weight: 600"
                                 >open to full-time Software Engineering
                                 roles</span
                             >
@@ -570,8 +616,8 @@
                             <a
                                 href="files/Karanbir Singh Pelia Resume.pdf"
                                 download
+                                class="cyan-text"
                                 style="
-                                    color: var(--emerald);
                                     font-weight: 600;
                                     text-decoration: underline;
                                     text-underline-offset: 3px;
@@ -581,155 +627,109 @@
                         </p>
                     </div>
 
-                    <!-- RIGH: skills pills panel -->
-                    <div class="about-skills-panel">
-                        <div class="about-skills-title">Skills &amp; Stack</div>
-
-                        <div class="skill-categories">
+                    <div class="about__skills panel" data-reveal>
+                        <div class="skills__title">Skills &amp; Stack</div>
+                        <div class="skill-cols">
                             <div class="skill-col">
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-code"></i>
-                                        Languages</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >Languages</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag">Python</span>
-                                        <span class="skill-tag">Java</span>
-                                        <span class="skill-tag">C++</span>
-                                        <span class="skill-tag"
-                                            >JavaScript</span
-                                        >
-                                        <span class="skill-tag">SQL</span>
-                                        <span class="skill-tag">HTML</span>
-                                        <span class="skill-tag">CSS</span>
+                                    <div class="skill-group__tags">
+                                        <span class="chip">Python</span>
+                                        <span class="chip">Java</span>
+                                        <span class="chip">C++</span>
+                                        <span class="chip">JavaScript</span>
+                                        <span class="chip">SQL</span>
                                     </div>
                                 </div>
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-server"></i>
-                                        Backend</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >Backend</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag"
-                                            >Spring Boot</span
-                                        >
-                                        <span class="skill-tag">FastAPI</span>
-                                        <span class="skill-tag">Flask</span>
-                                        <span class="skill-tag">REST APIs</span>
-                                        <span class="skill-tag">asyncio</span>
-                                        <span class="skill-tag">Pydantic</span>
-                                        <span class="skill-tag">Kafka</span>
-                                        <span class="skill-tag">gRPC</span>
-                                        <span class="skill-tag">RAFT</span>
-                                        <span class="skill-tag"
-                                            >PostgreSQL</span
-                                        >
-                                        <span class="skill-tag">Redis</span>
-                                        <span class="skill-tag">MongoDB</span>
-                                        <span class="skill-tag">MySQL</span>
+                                    <div class="skill-group__tags">
+                                        <span class="chip">Spring Boot</span>
+                                        <span class="chip">FastAPI</span>
+                                        <span class="chip">Flask</span>
+                                        <span class="chip">REST APIs</span>
+                                        <span class="chip">Pydantic</span>
+                                        <span class="chip">Kafka</span>
+                                        <span class="chip">gRPC</span>
+                                        <span class="chip">RAFT</span>
+                                        <span class="chip">PostgreSQL</span>
+                                        <span class="chip">Redis</span>
+                                        <span class="chip">MongoDB</span>
+                                        <span class="chip">MySQL</span>
                                     </div>
                                 </div>
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-window-maximize"></i>
-                                        Frontend</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >Frontend</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag">React</span>
-                                        <span class="skill-tag"
-                                            >Tailwind CSS</span
-                                        >
+                                    <div class="skill-group__tags">
+                                        <span class="chip">React</span>
+                                        <span class="chip">Tailwind CSS</span>
+                                        <span class="chip">HTML</span>
                                     </div>
                                 </div>
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-database"></i> Data
-                                        Engineering</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >Data Engineering</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag">Avro</span>
-                                        <span class="skill-tag"
+                                    <div class="skill-group__tags">
+                                        <span class="chip"
                                             >Confluent Schema Registry</span
                                         >
-                                        <span class="skill-tag">Parquet</span>
-                                        <span class="skill-tag">PyArrow</span>
+                                        <span class="chip">Avro</span>
+                                        <span class="chip">Parquet</span>
+                                        <span class="chip">PyArrow</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="skill-col">
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-vial"></i> Testing
-                                        &amp; DevOps</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >Testing &amp; DevOps</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag">JUnit 5</span>
-                                        <span class="skill-tag">Mockito</span>
-                                        <span class="skill-tag">Pytest</span>
-                                        <span class="skill-tag">Docker</span>
-                                        <span class="skill-tag"
-                                            >Kubernetes</span
-                                        >
-                                        <span class="skill-tag">Jenkins</span>
-                                        <span class="skill-tag">CI/CD</span>
-                                        <span class="skill-tag">Git</span>
-                                        <span class="skill-tag">GitHub</span>
-                                        <span class="skill-tag">Postman</span>
+                                    <div class="skill-group__tags">
+                                        <span class="chip">JUnit 5</span>
+                                        <span class="chip">Mockito</span>
+                                        <span class="chip">Pytest</span>
+                                        <span class="chip">Docker</span>
+                                        <span class="chip">Kubernetes</span>
+                                        <span class="chip">Jenkins</span>
+                                        <span class="chip">CI/CD</span>
+                                        <span class="chip">GitHub</span>
+                                        <span class="chip">Postman</span>
                                     </div>
                                 </div>
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-chart-line"></i>
-                                        Observability</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >Observability</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag"
-                                            >Prometheus</span
-                                        >
-                                        <span class="skill-tag">Grafana</span>
-                                        <span class="skill-tag"
-                                            >Micrometer</span
-                                        >
-                                        <span class="skill-tag"
-                                            >Log Analysis</span
-                                        >
+                                    <div class="skill-group__tags">
+                                        <span class="chip">Prometheus</span>
+                                        <span class="chip">Grafana</span>
+                                        <span class="chip">Micrometer</span>
                                     </div>
                                 </div>
-                                <div class="skill-category">
-                                    <span class="skill-category-label"
-                                        ><i class="fas fa-brain"></i> AI /
-                                        ML</span
+                                <div class="skill-group">
+                                    <span class="skill-group__label"
+                                        >AI / ML</span
                                     >
-                                    <div class="skill-tags">
-                                        <span class="skill-tag"
-                                            >Ollama / LLMs</span
-                                        >
-                                        <span class="skill-tag">RAG</span>
-                                        <span class="skill-tag">ChromaDB</span>
-                                        <span class="skill-tag"
-                                            >sentence-transformers</span
-                                        >
-                                        <span class="skill-tag"
-                                            >Claude Code</span
-                                        >
-                                        <span class="skill-tag"
-                                            >GitHub Copilot</span
-                                        >
-                                        <span class="skill-tag">Cursor</span>
-                                        <span class="skill-tag">Codex</span>
-                                        <span class="skill-tag"
-                                            >Google Antigravity</span
-                                        >
-                                        <span class="skill-tag"
-                                            >TensorFlow</span
-                                        >
-                                        <span class="skill-tag">OpenCV</span>
-                                        <span class="skill-tag">NumPy</span>
-                                        <span class="skill-tag"
+                                    <div class="skill-group__tags">
+                                        <span class="chip">Ollama / LLMs</span>
+                                        <span class="chip">RAG</span>
+                                        <span class="chip">ChromaDB</span>
+                                        <span class="chip">Claude Code</span>
+                                        <span class="chip">Copilot</span>
+                                        <span class="chip">Cursor</span>
+                                        <span class="chip">Codex</span>
+                                        <span class="chip">TensorFlow</span>
+                                        <span class="chip">OpenCV</span>
+                                        <span class="chip">NumPy</span>
+                                        <span class="chip"
                                             >Prompt Engineering</span
-                                        >
-                                        <span class="skill-tag"
-                                            >LLM Output Evaluation</span
                                         >
                                     </div>
                                 </div>
@@ -742,22 +742,16 @@
             <!-- ========================================================
                  EDUCATION
                  ======================================================== -->
-            <div class="section-sep"></div>
             <section id="education" aria-label="Education">
-                <div class="section-header">
-                    <span class="section-tag"
-                        ><i class="fas fa-graduation-cap"></i> Education</span
-                    >
-                    <h2 class="section-title">
-                        Academic <span class="gradient-text">Background</span>
-                    </h2>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Education</span>
+                    <h2 class="section-title">Academic background</h2>
                 </div>
 
                 <div class="edu-grid">
-                    <!-- Stony Brook -->
-                    <div class="edu-card">
-                        <div class="edu-header">
-                            <div class="edu-logo-wrap">
+                    <div class="edu-card panel panel--interactive" data-reveal>
+                        <div class="edu-card__head">
+                            <div class="edu-logo">
                                 <img
                                     src="images/logos/Stony_Brook_University.png"
                                     alt="Stony Brook University"
@@ -774,43 +768,35 @@
                             </div>
                         </div>
                         <div class="edu-meta">
-                            <span class="edu-badge"
+                            <span class="badge badge--neutral"
                                 ><i class="fas fa-map-marker-alt"></i> Stony
                                 Brook, NY</span
                             >
-                            <span class="edu-badge green"
+                            <span class="badge badge--cyan"
                                 ><i class="fas fa-calendar-alt"></i> Aug 2024 –
                                 May 2026</span
                             >
-                            <span class="edu-badge amber"
-                                ><i class="fas fa-star"></i> Graduated
-                            </span>
+                            <span class="badge badge--green"
+                                ><i class="fas fa-check-circle"></i>
+                                Graduated</span
+                            >
                         </div>
                         <div class="edu-courses">
-                            <div class="edu-courses-label">Coursework</div>
-                            <div class="edu-course-tags">
-                                <span class="edu-course-tag">Data Science</span>
-                                <span class="edu-course-tag">HCI</span>
-                                <span class="edu-course-tag"
-                                    >Computer Graphics</span
-                                >
-                                <span class="edu-course-tag"
-                                    >Advanced Algorithms</span
-                                >
-                                <span class="edu-course-tag"
-                                    >Distributed Systems</span
-                                >
-                                <span class="edu-course-tag"
-                                    >Data Management</span
-                                >
+                            <span class="edu-courses__label">Coursework</span>
+                            <div class="edu-courses__tags">
+                                <span class="chip">Data Science</span>
+                                <span class="chip">HCI</span>
+                                <span class="chip">Computer Graphics</span>
+                                <span class="chip">Advanced Algorithms</span>
+                                <span class="chip">Distributed Systems</span>
+                                <span class="chip">Data Management</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- SPPU -->
-                    <div class="edu-card">
-                        <div class="edu-header">
-                            <div class="edu-logo-wrap">
+                    <div class="edu-card panel panel--interactive" data-reveal>
+                        <div class="edu-card__head">
+                            <div class="edu-logo">
                                 <img
                                     src="images/logos/SPPU.png"
                                     alt="Savitribai Phule Pune University"
@@ -828,38 +814,28 @@
                             </div>
                         </div>
                         <div class="edu-meta">
-                            <span class="edu-badge"
+                            <span class="badge badge--neutral"
                                 ><i class="fas fa-map-marker-alt"></i> Pune, MH,
                                 India</span
                             >
-                            <span class="edu-badge green"
+                            <span class="badge badge--cyan"
                                 ><i class="fas fa-calendar-alt"></i> Sep 2020 –
                                 Jun 2024</span
                             >
-                            <span class="edu-badge amber"
+                            <span class="badge badge--accent"
                                 ><i class="fas fa-star"></i> 9.11 / 10 GPA</span
                             >
                         </div>
                         <div class="edu-courses">
-                            <div class="edu-courses-label">Coursework</div>
-                            <div class="edu-course-tags">
-                                <span class="edu-course-tag"
-                                    >Data Structures</span
-                                >
-                                <span class="edu-course-tag">Algorithms</span>
-                                <span class="edu-course-tag">OOP</span>
-                                <span class="edu-course-tag"
-                                    >Operating Systems</span
-                                >
-                                <span class="edu-course-tag"
-                                    >Computer Networks</span
-                                >
-                                <span class="edu-course-tag"
-                                    >Database Systems</span
-                                >
-                                <span class="edu-course-tag"
-                                    >Machine Learning</span
-                                >
+                            <span class="edu-courses__label">Coursework</span>
+                            <div class="edu-courses__tags">
+                                <span class="chip">Data Structures</span>
+                                <span class="chip">Algorithms</span>
+                                <span class="chip">OOP</span>
+                                <span class="chip">Operating Systems</span>
+                                <span class="chip">Computer Networks</span>
+                                <span class="chip">Database Systems</span>
+                                <span class="chip">Machine Learning</span>
                             </div>
                         </div>
                     </div>
@@ -869,104 +845,105 @@
             <!-- ========================================================
                  EXPERIENCE
                  ======================================================== -->
-            <div class="section-sep"></div>
             <section id="experience" aria-label="Experience">
-                <div class="section-header">
-                    <span class="section-tag"
-                        ><i class="fas fa-briefcase"></i> Experience</span
-                    >
-                    <h2 class="section-title">
-                        Professional <span class="gradient-text">Journey</span>
-                    </h2>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Experience</span>
+                    <h2 class="section-title">Professional journey</h2>
                 </div>
 
-                <div class="exp-timeline">
-                    <!-- Infrrd -->
-                    <div class="exp-item">
-                        <div class="exp-dot">
-                            <img
-                                src="images/logos/Infrrd.png"
-                                alt="Infrrd Inc."
-                                loading="lazy"
-                            />
-                        </div>
-                        <div class="exp-card">
-                            <div class="exp-header">
+                <div class="exp-list">
+                    <div
+                        class="exp-card panel"
+                        data-type="internship"
+                        data-reveal
+                    >
+                        <div class="exp-card__head">
+                            <div class="exp-card__title">
+                                <div class="exp-logo">
+                                    <img
+                                        src="images/logos/Infrrd.png"
+                                        alt="Infrrd Inc."
+                                        loading="lazy"
+                                    />
+                                </div>
                                 <div>
                                     <div class="exp-role">
                                         Software Engineer Intern
                                     </div>
                                     <div class="exp-company">Infrrd Inc.</div>
                                 </div>
-                                <div class="exp-meta">
-                                    <span class="exp-type">Internship</span>
-                                    <span class="exp-date"
-                                        ><i class="fas fa-calendar-alt"></i> May
-                                        2025 – Jan 2026</span
-                                    >
-                                    <span class="exp-loc"
-                                        ><i class="fas fa-map-marker-alt"></i>
-                                        San Jose, CA</span
-                                    >
-                                </div>
                             </div>
-                            <div class="exp-points">
-                                <div class="exp-point">
-                                    Built an internal FastAPI evaluation
-                                    platform automating accuracy benchmarking
-                                    across document processing pipelines,
-                                    standardizing QA workflows and cutting
-                                    manual effort roughly in half.
-                                </div>
-                                <div class="exp-point">
-                                    Strengthened an LLM-based document
-                                    verification framework, resolving
-                                    misclassification issues and lifting
-                                    extraction accuracy on key document fields
-                                    by over 20 percentage points.
-                                </div>
-                                <div class="exp-point">
-                                    Shipped feature-flagged production releases
-                                    with output validation and fallback
-                                    handling, enabling zero-downtime rollouts
-                                    across Agile sprints.
-                                </div>
-                                <div class="exp-point">
-                                    Built a stateless async replay endpoint for
-                                    classification testing, removing the need
-                                    to re-run the full pipeline and speeding up
-                                    debugging and QA turnaround.
-                                </div>
+                            <div class="exp-meta">
+                                <span class="badge badge--accent"
+                                    >Internship</span
+                                >
+                                <span
+                                    ><i class="fas fa-calendar-alt"></i> May
+                                    2025 – Jan 2026</span
+                                >
+                                <span
+                                    ><i class="fas fa-map-marker-alt"></i> San
+                                    Jose, CA</span
+                                >
                             </div>
-                            <div class="exp-tags">
-                                <span class="exp-tag">Python</span>
-                                <span class="exp-tag">FastAPI</span>
-                                <span class="exp-tag">Flask</span>
-                                <span class="exp-tag">REST APIs</span>
-                                <span class="exp-tag">MongoDB</span>
-                                <span class="exp-tag">Jenkins</span>
-                                <span class="exp-tag">Grafana</span>
-                                <span class="exp-tag">JavaScript</span>
-                                <span class="exp-tag">Jira</span>
-                                <span class="exp-tag">Confluence</span>
-                                <span class="exp-tag">Postman</span>
-                                <span class="exp-tag">Copilot</span>
-                                <span class="exp-tag">Claude Code</span>
+                        </div>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                Built an internal FastAPI evaluation platform
+                                automating accuracy benchmarking across document
+                                processing pipelines, standardizing QA workflows
+                                and cutting manual effort roughly in half.
                             </div>
+                            <div class="exp-point">
+                                Strengthened an LLM-based document verification
+                                framework, resolving misclassification issues
+                                and lifting extraction accuracy on key document
+                                fields by over 20 percentage points.
+                            </div>
+                            <div class="exp-point">
+                                Shipped feature-flagged production releases with
+                                output validation and fallback handling,
+                                enabling zero-downtime rollouts across Agile
+                                sprints.
+                            </div>
+                            <div class="exp-point">
+                                Built a stateless async replay endpoint for
+                                classification testing, removing the need to
+                                re-run the full pipeline and speeding up
+                                debugging and QA turnaround.
+                            </div>
+                        </div>
+                        <div class="exp-tags">
+                            <span class="chip">Python</span>
+                            <span class="chip">FastAPI</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">REST APIs</span>
+                            <span class="chip">MongoDB</span>
+                            <span class="chip">Jenkins</span>
+                            <span class="chip">Grafana</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Jira</span>
+                            <span class="chip">Confluence</span>
+                            <span class="chip">Postman</span>
+                            <span class="chip">Copilot</span>
+                            <span class="chip">Claude Code</span>
                         </div>
                     </div>
 
-                    <!-- GRA -->
-                    <div class="exp-item">
-                        <div class="exp-dot">
-                            <img
-                                src="images/logos/Stony_Brook_University.png"
-                                alt="Stony Brook University"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div class="exp-card">
-                            <div class="exp-header">
+                    <div
+                        class="exp-card panel"
+                        data-type="research"
+                        data-reveal
+                    >
+                        <div class="exp-card__head">
+                            <div class="exp-card__title">
+                                <div class="exp-logo">
+                                    <img
+                                        src="images/logos/Stony_Brook_University.png"
+                                        alt="Stony Brook University"
+                                        loading="lazy"
+                                    />
+                                </div>
                                 <div>
                                     <div class="exp-role">
                                         Graduate Research Assistant
@@ -975,52 +952,49 @@
                                         Stony Brook University
                                     </div>
                                 </div>
-                                <div class="exp-meta">
-                                    <span class="exp-type">Research</span>
-                                    <span class="exp-date"
-                                        ><i class="fas fa-calendar-alt"></i> Jan
-                                        2025 – Dec 2025</span
-                                    >
-                                    <span class="exp-loc"
-                                        ><i class="fas fa-map-marker-alt"></i>
-                                        Stony Brook, NY</span
-                                    >
-                                </div>
                             </div>
-                            <div class="exp-points">
-                                <div class="exp-point">
-                                    Exploring visual storytelling with Prof.
-                                    Klaus Mueller to enhance infographic
-                                    communication through iterative feedback
-                                    loops.
-                                </div>
-                                <div class="exp-point">
-                                    Evaluating LLMs' alignment with human
-                                    cognition in interpreting data
-                                    visualizations and complex information
-                                    displays.
-                                </div>
+                            <div class="exp-meta">
+                                <span class="badge badge--cyan">Research</span>
+                                <span
+                                    ><i class="fas fa-calendar-alt"></i> Jan
+                                    2025 – Dec 2025</span
+                                >
+                                <span
+                                    ><i class="fas fa-map-marker-alt"></i> Stony
+                                    Brook, NY</span
+                                >
                             </div>
-                            <div class="exp-tags">
-                                <span class="exp-tag">LLMs</span>
-                                <span class="exp-tag">Data Visualization</span>
-                                <span class="exp-tag">HCI</span>
-                                <span class="exp-tag">Python</span>
+                        </div>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                Exploring visual storytelling with Prof. Klaus
+                                Mueller to enhance infographic communication
+                                through iterative feedback loops.
                             </div>
+                            <div class="exp-point">
+                                Evaluating LLMs' alignment with human cognition
+                                in interpreting data visualizations and complex
+                                information displays.
+                            </div>
+                        </div>
+                        <div class="exp-tags">
+                            <span class="chip">LLMs</span>
+                            <span class="chip">Data Visualization</span>
+                            <span class="chip">HCI</span>
+                            <span class="chip">Python</span>
                         </div>
                     </div>
 
-                    <!-- Campus Credentials -->
-                    <div class="exp-item">
-                        <div class="exp-dot">
-                            <img
-                                src="images/logos/Campus_Credentials.png"
-                                alt="Campus Credentials"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div class="exp-card">
-                            <div class="exp-header">
+                    <div class="exp-card panel" data-type="trainee" data-reveal>
+                        <div class="exp-card__head">
+                            <div class="exp-card__title">
+                                <div class="exp-logo">
+                                    <img
+                                        src="images/logos/Campus_Credentials.png"
+                                        alt="Campus Credentials"
+                                        loading="lazy"
+                                    />
+                                </div>
                                 <div>
                                     <div class="exp-role">
                                         Software Developer Trainee
@@ -1029,38 +1003,39 @@
                                         Campus Credentials
                                     </div>
                                 </div>
-                                <div class="exp-meta">
-                                    <span class="exp-type">Trainee</span>
-                                    <span class="exp-date"
-                                        ><i class="fas fa-calendar-alt"></i> Jan
-                                        2023 – Feb 2023</span
-                                    >
-                                    <span class="exp-loc"
-                                        ><i class="fas fa-map-marker-alt"></i>
-                                        Pune, MH</span
-                                    >
-                                </div>
                             </div>
-                            <div class="exp-points">
-                                <div class="exp-point">
-                                    Strengthened backend development
-                                    fundamentals including OOP concepts, DSA,
-                                    RESTful APIs, web scraping, and
-                                    multithreading.
-                                </div>
-                                <div class="exp-point">
-                                    Built a Python CLI application integrated
-                                    with MySQL to execute CRUD operations for
-                                    managing structured student data.
-                                </div>
+                            <div class="exp-meta">
+                                <span class="badge badge--neutral"
+                                    >Trainee</span
+                                >
+                                <span
+                                    ><i class="fas fa-calendar-alt"></i> Jan
+                                    2023 – Feb 2023</span
+                                >
+                                <span
+                                    ><i class="fas fa-map-marker-alt"></i> Pune,
+                                    MH</span
+                                >
                             </div>
-                            <div class="exp-tags">
-                                <span class="exp-tag">Python</span>
-                                <span class="exp-tag">MySQL</span>
-                                <span class="exp-tag">REST APIs</span>
-                                <span class="exp-tag">OOP</span>
-                                <span class="exp-tag">DSA</span>
+                        </div>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                Strengthened backend development fundamentals
+                                including OOP concepts, DSA, RESTful APIs, web
+                                scraping, and multithreading.
                             </div>
+                            <div class="exp-point">
+                                Built a Python CLI application integrated with
+                                MySQL to execute CRUD operations for managing
+                                structured student data.
+                            </div>
+                        </div>
+                        <div class="exp-tags">
+                            <span class="chip">Python</span>
+                            <span class="chip">MySQL</span>
+                            <span class="chip">REST APIs</span>
+                            <span class="chip">OOP</span>
+                            <span class="chip">DSA</span>
                         </div>
                     </div>
                 </div>
@@ -1069,15 +1044,10 @@
             <!-- ========================================================
                  PROJECTS
                  ======================================================== -->
-            <div class="section-sep"></div>
             <section id="projects" aria-label="Projects">
-                <div class="section-header">
-                    <span class="section-tag"
-                        ><i class="fas fa-folder-open"></i> Projects</span
-                    >
-                    <h2 class="section-title">
-                        Featured <span class="gradient-text">Work</span>
-                    </h2>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Projects</span>
+                    <h2 class="section-title">Featured work</h2>
                     <p class="section-subtitle">
                         A collection of things I've built — from distributed
                         backend systems to automation pipelines and real-time ML
@@ -1086,30 +1056,34 @@
                 </div>
 
                 <div class="projects-grid">
-                    <!-- Entitle (featured) -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-hand-holding-heart"
-                                    style="color: #60a5fa"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(245, 185, 66, 0.14);
+                                    color: #f5b942;
+                                "
+                            >
+                                <i class="fas fa-hand-holding-heart"></i>
                             </div>
-                            <div class="project-name">Entitle</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">Entitle</div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/entitle"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Privacy-first RAG agent that turns a free-form
                                 description of someone's household into a
                                 structured profile and matches it against 15
@@ -1119,246 +1093,272 @@
                                 that explains photographed benefit notices and
                                 denial letters in plain language.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span
-                                ><span class="project-tag">FastAPI</span
-                                ><span class="project-tag">React</span
-                                ><span class="project-tag">Tailwind CSS</span
-                                ><span class="project-tag">Gemma 4</span
-                                ><span class="project-tag">ChromaDB</span
-                                ><span class="project-tag">Ollama</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Python</span>
+                                <span class="chip">FastAPI</span>
+                                <span class="chip">React</span>
+                                <span class="chip">Tailwind CSS</span>
+                                <span class="chip">Gemma 4</span>
+                                <span class="chip">ChromaDB</span>
+                                <span class="chip">Ollama</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- MediGrid (featured) -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-hospital-user"
-                                    style="color: #a78bfa"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(167, 139, 250, 0.14);
+                                    color: #a78bfa;
+                                "
+                            >
+                                <i class="fas fa-hospital-user"></i>
                             </div>
-                            <div class="project-name">MediGrid</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">MediGrid</div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/medigrid"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Fault-tolerant medical resource availability
                                 platform built with Spring Boot, Kafka, gRPC,
                                 RAFT, PostgreSQL, Redis, Docker, and Kubernetes.
                                 Implements RAFT consensus from scratch to
-                                maintain write availability under node
-                                failures, validates streamed updates against
-                                Avro schemas, and powers OLAP analytics through
-                                a Parquet-exportable history store.
+                                maintain write availability under node failures,
+                                validates streamed updates against Avro schemas,
+                                and powers OLAP analytics through a
+                                Parquet-exportable history store.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Java</span
-                                ><span class="project-tag">Spring Boot</span
-                                ><span class="project-tag">Kafka</span
-                                ><span class="project-tag">Avro</span
-                                ><span class="project-tag">gRPC</span
-                                ><span class="project-tag">RAFT</span
-                                ><span class="project-tag">PostgreSQL</span
-                                ><span class="project-tag">Redis</span
-                                ><span class="project-tag">Docker</span
-                                ><span class="project-tag">Kubernetes</span
-                                ><span class="project-tag">Prometheus</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Java</span>
+                                <span class="chip">Spring Boot</span>
+                                <span class="chip">Kafka</span>
+                                <span class="chip">Avro</span>
+                                <span class="chip">gRPC</span>
+                                <span class="chip">RAFT</span>
+                                <span class="chip">PostgreSQL</span>
+                                <span class="chip">Redis</span>
+                                <span class="chip">Docker</span>
+                                <span class="chip">Kubernetes</span>
+                                <span class="chip">Prometheus</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- AgentFlow -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-robot"
-                                    style="color: #34d399"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(52, 211, 153, 0.14);
+                                    color: #34d399;
+                                "
+                            >
+                                <i class="fas fa-robot"></i>
                             </div>
-                            <div class="project-name">AgentFlow</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">AgentFlow</div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/agentflow"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Turns plain English into executable API
                                 workflows. Local Llama 3 reasons over tasks,
                                 outputs validated JSON payloads, and calls
                                 external REST APIs end-to-end with zero cloud
                                 dependency.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span
-                                ><span class="project-tag">Ollama</span
-                                ><span class="project-tag">Llama 3</span
-                                ><span class="project-tag">FastAPI</span
-                                ><span class="project-tag">Pytest</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Python</span>
+                                <span class="chip">Ollama</span>
+                                <span class="chip">Llama 3</span>
+                                <span class="chip">FastAPI</span>
+                                <span class="chip">Pytest</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- TrackDesk -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-ticket-alt"
-                                    style="color: #34d399"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(56, 189, 248, 0.14);
+                                    color: #38bdf8;
+                                "
+                            >
+                                <i class="fas fa-ticket-alt"></i>
                             </div>
-                            <div class="project-name">TrackDesk</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">TrackDesk</div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/trackdesk"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Production-grade ticket management API built
                                 with Java and Spring Boot. Fully observable via
                                 Micrometer, Prometheus, and Grafana, with 80%+
                                 test coverage using JUnit 5 and Mockito, plus
                                 Swagger documentation.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Java</span
-                                ><span class="project-tag">Spring Boot</span
-                                ><span class="project-tag">Prometheus</span
-                                ><span class="project-tag">Grafana</span
-                                ><span class="project-tag">JUnit 5</span
-                                ><span class="project-tag">Swagger</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Java</span>
+                                <span class="chip">Spring Boot</span>
+                                <span class="chip">Prometheus</span>
+                                <span class="chip">Grafana</span>
+                                <span class="chip">JUnit 5</span>
+                                <span class="chip">Swagger</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Site to Slides -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-window-maximize"
-                                    style="color: #fb923c"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(251, 146, 60, 0.14);
+                                    color: #fb923c;
+                                "
+                            >
+                                <i class="fas fa-window-maximize"></i>
                             </div>
-                            <div class="project-name">Site to Slides</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">
+                                Site to Slides
+                            </div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/site-to-slides"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Paste a URL, get a ready-to-present slideshow.
                                 Reverse-engineered undocumented API endpoints
                                 via browser network inspection to automate slide
                                 generation from any public webpage.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span
-                                ><span class="project-tag">Firecrawl API</span
-                                ><span class="project-tag">REST APIs</span
-                                ><span class="project-tag">WebSockets</span
-                                ><span class="project-tag">JWT Auth</span
-                                ><span class="project-tag">Web Scraping</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Python</span>
+                                <span class="chip">Firecrawl API</span>
+                                <span class="chip">REST APIs</span>
+                                <span class="chip">WebSockets</span>
+                                <span class="chip">JWT Auth</span>
+                                <span class="chip">Web Scraping</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Fatigue Sense -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-car-side"
-                                    style="color: #f472b6"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(244, 114, 182, 0.14);
+                                    color: #f472b6;
+                                "
+                            >
+                                <i class="fas fa-car-side"></i>
                             </div>
-                            <div class="project-name">Fatigue Sense</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">Fatigue Sense</div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/fatigue-sense"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Real-time driver safety system unifying a Keras
                                 CNN with MediaPipe Pose and Hand tracking across
                                 3 concurrent detection pipelines, flagging
                                 fatigue, posture, and hand-position risks with
                                 95% classification accuracy.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span
-                                ><span class="project-tag">Keras</span
-                                ><span class="project-tag">MediaPipe</span
-                                ><span class="project-tag">TensorFlow</span
-                                ><span class="project-tag">OpenCV</span
-                                ><span class="project-tag">Pygame</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Python</span>
+                                <span class="chip">Keras</span>
+                                <span class="chip">MediaPipe</span>
+                                <span class="chip">TensorFlow</span>
+                                <span class="chip">OpenCV</span>
+                                <span class="chip">Pygame</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- AgroDoc -->
-                    <div class="project-card">
-                        <div class="project-banner">
-                            <div class="project-banner-glow"></div>
-                            <div class="project-icon-wrap">
-                                <i
-                                    class="fas fa-leaf"
-                                    style="color: #4ade80"
-                                ></i>
+                    <div
+                        class="project-card panel panel--interactive"
+                        data-reveal
+                    >
+                        <div class="project-card__banner">
+                            <div
+                                class="project-card__icon"
+                                style="
+                                    background: rgba(74, 222, 128, 0.14);
+                                    color: #4ade80;
+                                "
+                            >
+                                <i class="fas fa-leaf"></i>
                             </div>
-                            <div class="project-name">AgroDoc</div>
-                            <div class="project-links-top">
+                            <div class="project-card__title">AgroDoc</div>
+                            <div class="project-card__links">
                                 <a
                                     href="https://github.com/karanbir-pelia/agrodoc"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="GitHub"
                                     ><i class="fab fa-github"></i
                                 ></a>
@@ -1366,25 +1366,25 @@
                                     href="https://agrodoc.streamlit.app/"
                                     target="_blank"
                                     rel="noopener"
-                                    class="project-link-icon"
+                                    class="icon-btn"
                                     aria-label="Live Demo"
                                     ><i class="fas fa-external-link-alt"></i
                                 ></a>
                             </div>
                         </div>
-                        <div class="project-body">
-                            <p class="project-desc">
+                        <div class="project-card__body">
+                            <p class="project-card__desc">
                                 Full-stack plant disease detection web app using
                                 a TensorFlow CNN served via Streamlit,
                                 classifying 38 conditions across 14 crops at
                                 97.38% accuracy on 87,000+ images.
                             </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span
-                                ><span class="project-tag">TensorFlow</span
-                                ><span class="project-tag">Keras</span
-                                ><span class="project-tag">OpenCV</span
-                                ><span class="project-tag">Streamlit</span>
+                            <div class="project-card__tags">
+                                <span class="chip">Python</span>
+                                <span class="chip">TensorFlow</span>
+                                <span class="chip">Keras</span>
+                                <span class="chip">OpenCV</span>
+                                <span class="chip">Streamlit</span>
                             </div>
                         </div>
                     </div>
@@ -1394,15 +1394,10 @@
             <!-- ========================================================
                  PUBLICATIONS
                  ======================================================== -->
-            <div class="section-sep"></div>
             <section id="publications" aria-label="Publications">
-                <div class="section-header">
-                    <span class="section-tag"
-                        ><i class="fas fa-book-open"></i> Publications</span
-                    >
-                    <h2 class="section-title">
-                        Published <span class="gradient-text">Work</span>
-                    </h2>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Publications</span>
+                    <h2 class="section-title">Published work</h2>
                     <p class="section-subtitle">
                         Research writing connected to applied AI, agriculture,
                         and computer vision.
@@ -1413,21 +1408,24 @@
                     href="https://onlinelibrary.wiley.com/doi/10.1002/9781394287260.ch7"
                     target="_blank"
                     rel="noopener"
-                    class="publication-card"
+                    class="pub-card panel panel--interactive"
                     aria-label="Open published chapter on Wiley Online Library"
+                    data-reveal
                 >
-                    <div class="publication-icon">
+                    <div class="pub-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
-                    <div class="publication-content">
-                        <div class="publication-title">
+                    <div>
+                        <div class="pub-title">
                             Advances in Plant Disease Detection and
                             Classification Systems
                         </div>
-                        <div class="publication-meta">
-                            Scrivener Publishing LLC <span>Nov 2025</span>
+                        <div class="pub-meta">
+                            <span>Scrivener Publishing LLC</span>
+                            <span>·</span>
+                            <span>Nov 2025</span>
                         </div>
-                        <p class="publication-desc">
+                        <p class="pub-desc">
                             Co-authored a chapter published in
                             <em
                                 >Optimizing AI Applications for Sustainable
@@ -1438,13 +1436,11 @@
                             agriculture applications for plant disease
                             detection.
                         </p>
-                        <div class="publication-tags">
-                            <span class="publication-tag">Deep Learning</span>
-                            <span class="publication-tag">Computer Vision</span>
-                            <span class="publication-tag"
-                                >Sustainable Agriculture</span
-                            >
-                            <span class="publication-tag">AgroDoc</span>
+                        <div class="pub-tags">
+                            <span class="chip">Deep Learning</span>
+                            <span class="chip">Computer Vision</span>
+                            <span class="chip">Sustainable Agriculture</span>
+                            <span class="chip">AgroDoc</span>
                         </div>
                     </div>
                 </a>
@@ -1453,38 +1449,35 @@
             <!-- ========================================================
                  CONTACT
                  ======================================================== -->
-            <div class="section-sep"></div>
             <section id="contact" aria-label="Contact">
-                <div class="section-header">
-                    <span class="section-tag"
-                        ><i class="fas fa-envelope"></i> Contact</span
-                    >
-                    <h2 class="section-title">
-                        Let's <span class="gradient-text">Connect</span>
-                    </h2>
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow">Contact</span>
+                    <h2 class="section-title">Let's connect</h2>
                     <p class="section-subtitle">
                         Have a project in mind or want to collaborate? I'd love
                         to hear from you.
                     </p>
                 </div>
 
-                <div class="contact-layout">
-                    <div class="contact-info-panel">
-                        <p class="contact-intro">
+                <div class="contact__grid">
+                    <div class="contact__info" data-reveal>
+                        <p class="contact__intro">
                             I'm currently open to full-time software engineering
                             roles. Feel free to reach out.
                         </p>
 
                         <a
                             href="mailto:karanbirsinghpelia@gmail.com"
-                            class="contact-card"
+                            class="contact-item panel panel--interactive"
                         >
-                            <div class="contact-card-icon violet">
+                            <div
+                                class="contact-item__icon contact-item__icon--accent"
+                            >
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <div class="contact-card-label">Email</div>
-                                <div class="contact-card-value">
+                                <div class="contact-item__label">Email</div>
+                                <div class="contact-item__value">
                                     karanbirsinghpelia@gmail.com
                                 </div>
                             </div>
@@ -1494,14 +1487,16 @@
                             href="https://linkedin.com/in/karanbir-pelia"
                             target="_blank"
                             rel="me noopener"
-                            class="contact-card"
+                            class="contact-item panel panel--interactive"
                         >
-                            <div class="contact-card-icon violet">
+                            <div
+                                class="contact-item__icon contact-item__icon--cyan"
+                            >
                                 <i class="fab fa-linkedin"></i>
                             </div>
                             <div>
-                                <div class="contact-card-label">LinkedIn</div>
-                                <div class="contact-card-value">
+                                <div class="contact-item__label">LinkedIn</div>
+                                <div class="contact-item__value">
                                     karanbir-pelia
                                 </div>
                             </div>
@@ -1511,14 +1506,16 @@
                             href="https://github.com/karanbir-pelia"
                             target="_blank"
                             rel="me noopener"
-                            class="contact-card"
+                            class="contact-item panel panel--interactive"
                         >
-                            <div class="contact-card-icon emerald">
+                            <div
+                                class="contact-item__icon contact-item__icon--accent"
+                            >
                                 <i class="fab fa-github"></i>
                             </div>
                             <div>
-                                <div class="contact-card-label">GitHub</div>
-                                <div class="contact-card-value">
+                                <div class="contact-item__label">GitHub</div>
+                                <div class="contact-item__value">
                                     karanbir-pelia
                                 </div>
                             </div>
@@ -1528,21 +1525,23 @@
                             href="https://maps.app.goo.gl/tJff4dL7cCMbx8pF8"
                             target="_blank"
                             rel="noopener"
-                            class="contact-card"
+                            class="contact-item panel panel--interactive"
                         >
-                            <div class="contact-card-icon emerald">
+                            <div
+                                class="contact-item__icon contact-item__icon--cyan"
+                            >
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <div class="contact-card-label">Location</div>
-                                <div class="contact-card-value">
+                                <div class="contact-item__label">Location</div>
+                                <div class="contact-item__value">
                                     Stony Brook, New York
                                 </div>
                             </div>
                         </a>
                     </div>
 
-                    <div class="contact-form-panel">
+                    <div class="contact__form panel" data-reveal>
                         <form
                             id="contactForm"
                             action="https://formspree.io/f/mvgadwje"
@@ -1556,7 +1555,7 @@
                                 autocomplete="off"
                             />
 
-                            <div class="form-grid">
+                            <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name</label>
                                     <input
@@ -1577,7 +1576,9 @@
                                         placeholder="Subject (optional)"
                                     />
                                 </div>
-                                <div class="form-group full">
+                            </div>
+                            <div class="form-row full">
+                                <div class="form-group">
                                     <label for="email">Email</label>
                                     <input
                                         type="email"
@@ -1587,7 +1588,9 @@
                                         required
                                     />
                                 </div>
-                                <div class="form-group full">
+                            </div>
+                            <div class="form-row full">
+                                <div class="form-group">
                                     <label for="message">Message</label>
                                     <textarea
                                         id="message"
@@ -1600,10 +1603,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-submit-wrap">
+                            <div class="form-submit">
                                 <button
                                     type="submit"
-                                    class="btn btn-primary btn-full"
+                                    class="btn btn--primary btn--full"
                                 >
                                     <i class="fas fa-paper-plane"></i>
                                     Send Message
@@ -1617,18 +1620,16 @@
 
         <!-- ===== FOOTER ===== -->
         <footer>
-            <div class="footer-inner">
-                <a href="#hero" class="footer-logo">
-                    <span class="logo-icon"><i class="fas fa-bolt"></i></span>
-                    <span class="logo-text">Karanbir Singh Pelia</span>
-                </a>
-                <p class="footer-tagline">Building things that matter.</p>
-                <div class="footer-socials">
+            <div class="footer__inner">
+                <a href="#hero" class="footer__brand">Karanbir Singh Pelia</a>
+                <p class="footer__tagline">Building things that matter.</p>
+                <div class="footer__socials">
                     <a
                         href="https://github.com/karanbir-pelia"
                         target="_blank"
                         rel="me noopener"
                         aria-label="GitHub"
+                        class="icon-btn"
                         ><i class="fab fa-github"></i
                     ></a>
                     <a
@@ -1636,15 +1637,17 @@
                         target="_blank"
                         rel="me noopener"
                         aria-label="LinkedIn"
+                        class="icon-btn"
                         ><i class="fab fa-linkedin"></i
                     ></a>
                     <a
                         href="mailto:karanbirsinghpelia@gmail.com"
                         aria-label="Email"
+                        class="icon-btn"
                         ><i class="fas fa-envelope"></i
                     ></a>
                 </div>
-                <p class="copyright">
+                <p class="footer__copyright">
                     © 2026 Karanbir Singh Pelia. All rights reserved.
                 </p>
             </div>
